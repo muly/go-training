@@ -1,0 +1,33 @@
+package main
+
+import("fmt")
+
+func main(){
+	marks := 50
+	age := 40
+
+	if marks> 50 && 
+		age > 40{
+
+	} else if marks> 70{
+
+	}else{
+
+	}
+
+	if sum :=Add(2,3); sum>30{
+		var age1 = 20
+		fmt.Println(sum, age1)
+	}else{
+		// fmt.Println(sum, age1) // age1 error
+	}
+
+	fmt.Println(sum, age)// sum, age1 error
+}
+
+func Add(a, b int) (int) {
+	sum := a + b
+
+
+	return sum
+}

@@ -1,0 +1,44 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+var marks  = 50
+	
+var name = "go class"
+
+const pi = 3.414
+
+
+func main() {
+	marks = 100
+	
+address := "india" // shorthand 
+	// address = 200 // 
+	{
+		var location = "123"
+		var loc int
+		loc, _ = strconv.Atoi(location)
+
+		fmt.Println(location, loc)
+	}
+	{
+		var location = 123
+		var loc string
+		loc = strconv.Itoa(location)
+
+		fmt.Println(location, loc)
+	}
+
+	var m int64 
+	m = int64(marks)
+
+	var i int32= 100
+	var r rune = i
+	fmt.Println(r, i)
+
+
+	fmt.Println(name, marks, address, m)
+}

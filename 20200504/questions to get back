@@ -1,0 +1,38 @@
+
+1) 
+mulys-mbp:1 s$ go build -o hello
+mulys-mbp:1 s$ hello
+bash: hello: command not found
+
+2) 
+	var b  byte = 'a'
+	var r rune = b
+	fmt.Println(b, r)
+# command-line-arguments
+./hello.go:31:6: cannot use b (type byte) as type rune in assignment
+
+3) Harshul: on windows installation there is "test", "doc" folders in goroot
+
+
+4) break outer loop demo not working
+
+
+5) both slices are not having same address
+	{
+		var a []int
+		var b []int
+		a = []int{1, 2, 3, 4}
+		b = a
+		fmt.Println(a)
+		fmt.Println(len(a), cap(a))
+		print(&a)
+
+		fmt.Println(b)
+		fmt.Println(len(b), cap(b))
+		print(&b)
+		fmt.Println()
+	}
+
+6) 
+	pending functions: function return function, closure, anonymous function
+
