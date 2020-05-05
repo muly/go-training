@@ -6,9 +6,6 @@ import (
 
 var sciMarks, mathMarks = 50, 30
 
-
-// var isPass bool = true
-
 func main() {
 
 	fmt.Println(sciMarks, mathMarks)

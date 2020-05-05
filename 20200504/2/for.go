@@ -6,21 +6,21 @@ import (
 
 func main() {
 
-	// // 
+	// //
 	// for init, check, inc
 	// for i := 1; i <= 10; i++ {
 	// 	fmt.Print(i)
 	// }
 	// fmt.Println()
 
-	// // 
+	// //
 	// i := 1
 	// for ; i <= 10; i++ {
 	// 	fmt.Print(i)
 	// }
 	// fmt.Println()
 
-	// // 
+	// //
 	// {
 	// 	i := 1
 	// 	for i <= 10 {
@@ -30,7 +30,7 @@ func main() {
 	// 	fmt.Println()
 	// }
 
-	// 
+	//
 	// {
 	// 	i := 1
 	// 	for {
@@ -99,20 +99,18 @@ Outerfor:
 
 		fmt.Println()
 	}
-	
 
-
-	s:= []int{2,4,6,8,10}
-	for i, v:= range s{
+	s := []int{2, 4, 6, 8, 10}
+	for i, v := range s {
 		fmt.Println(i, v)
-	} 
-	for i, _:= range s{
+	}
+	for i, _ := range s {
 		fmt.Println(i, s[i])
-	} 
-	for i := range s{
+	}
+	for i := range s {
 		fmt.Println(i, s[i])
-	} 
-	for _, v := range s{
+	}
+	for _, v := range s {
 		fmt.Println(v)
-	} 
+	}
 }

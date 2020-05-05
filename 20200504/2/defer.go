@@ -1,38 +1,33 @@
 package main
 
-import ("fmt")
+import (
+	"fmt"
+)
 
-func main(){
+func main() {
 
-
-	if err := open() err != nil{
-		return 
+	if err := open(); err != nil {
+		return
 	}
 	defer close()
-	
 
-	if err := process1(); err != nil{
+	if err := process1(); err != nil {
 		// close()
-		return 
+		return
 	}
 
-
-	if err := process2(); err != nil{
+	if err := process2(); err != nil {
 		// close()
-		return 
+		return
 	}
 
 	// close()
 }
 
+func open() {}
 
-func open(){}
+func close() {}
 
+func process1() error {}
 
-func close(){}
-
-func process1()error{
-}
-
-
-func process2()error{
+func process2() error {}
