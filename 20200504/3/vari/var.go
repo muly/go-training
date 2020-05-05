@@ -23,3 +23,13 @@ func AddAll(name string, marks ...int) int {
 
 	return sum
 }
+
+
+
+type MyAdd func(a, b int) (int, int)
+
+var F MyAdd = func(a, b int) (int, int) {
+	sum := a + b
+	avg := (a + b) / 2
+	return sum, avg
+}

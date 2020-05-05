@@ -1,0 +1,44 @@
+package main
+
+import (
+	"fmt"
+)
+
+type student struct {
+	name  string
+	marks int
+}
+
+func main() {
+	var s1 student = student{
+		name:  "A",
+		marks: 50,
+	}
+	fmt.Println(s1)
+
+	var s2 student
+	s2 = student{"A", 50}
+	fmt.Println(s2)
+
+	var s3 student
+	s3 = student{
+		marks: 50,
+		name:  "B",
+	}
+	fmt.Println(s3)
+
+	var s4 student
+	s4.name = "A"
+	s4.marks = 50
+	fmt.Println(s4)
+
+	// structs are comparible
+	if s1 == s2 {
+		fmt.Println("same")
+	}
+	if s1 != s3 {
+		fmt.Println("diff")
+	}
+
+
+}

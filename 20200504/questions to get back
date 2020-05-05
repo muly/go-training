@@ -36,3 +36,10 @@ bash: hello: command not found
 6) 
 	pending functions: function return function, closure, anonymous function
 
+
+7) interface type
+	var d pet
+	d = &dog{name: "max"}
+	fmt.Printf("%T \n", d) // printing main.dog  expecting type pet
+
+8) practical scenario of interface as field in a struct

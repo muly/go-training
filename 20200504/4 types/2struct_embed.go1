@@ -1,0 +1,27 @@
+package main
+
+import (
+	"fmt"
+)
+
+type student struct {
+	name  string
+	marks int
+	priAddr address
+	altAddress address
+}
+
+type address struct{
+	stName string
+	city string
+}
+
+func main() {
+	var s1 student = student{
+		name:  "A",
+		marks: 50,
+		priAddr: address{"1 main st", "AAA"},
+		altAddress: address{"1 south st", "CCC"},
+	}
+	fmt.Println(s1)
+}
