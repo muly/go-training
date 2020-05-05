@@ -1,15 +1,16 @@
 
-1) 
+[x] 1) 
 mulys-mbp:1 s$ go build -o hello
 mulys-mbp:1 s$ hello
 bash: hello: command not found
 
-2) 
+[x]2) 
 	var b  byte = 'a'
 	var r rune = b
 	fmt.Println(b, r)
 # command-line-arguments
 ./hello.go:31:6: cannot use b (type byte) as type rune in assignment
+	int32 and rune are interchangeable
 
 3) Harshul: on windows installation there is "test", "doc" folders in goroot
 
@@ -33,7 +34,7 @@ bash: hello: command not found
 		fmt.Println()
 	}
 
-6) 
+[x]6) 
 	pending functions: function return function, closure, anonymous function
 
 
@@ -43,3 +44,7 @@ bash: hello: command not found
 	fmt.Printf("%T \n", d) // printing main.dog  expecting type pet
 
 8) practical scenario of interface as field in a struct
+	ref: https://stackoverflow.com/questions/26027350/go-interface-fields
+
+9) 2channels2unidirect.go not working
+
