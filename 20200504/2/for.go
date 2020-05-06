@@ -79,8 +79,9 @@ func main() {
 	// 	fmt.Println()
 	// }
 
-Outerfor:
+  
 	{
+		Outerfor: 
 		for j := 0; j < 3; j++ {
 			i := 1
 			for {

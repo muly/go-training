@@ -7,8 +7,8 @@ import (
 
 func main() {
 
-	var s <-chan int = make(chan int) 
-	var r chan<- int = make(chan int) 
+	var s chan int = make(chan int) 
+	var r chan int = make(chan int) 
 
 	go ping(s, r)
 	go pong(s, r)

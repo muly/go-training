@@ -15,10 +15,11 @@ bash: hello: command not found
 3) Harshul: on windows installation there is "test", "doc" folders in goroot
 
 
-4) break outer loop demo not working
+[x]4) break outer loop demo not working
+fixed. the label should be withing the scope. code is working after I moved the "Outerfor:" into the {} scope. see updated code 20200504/2/for.go
 
 
-5) both slices are not having same address
+[x] 5) both slices are not having same address
 	{
 		var a []int
 		var b []int
@@ -33,6 +34,8 @@ bash: hello: command not found
 		print(&b)
 		fmt.Println()
 	}
+they will be different because the slice itself has 3 fields (pointer to underlying array, len, cap), and the pointer field will be same for both
+see this blogpost for more details: https://blog.golang.org/slices-intro
 
 [x]6) 
 	pending functions: function return function, closure, anonymous function
@@ -43,8 +46,8 @@ bash: hello: command not found
 	d = &dog{name: "max"}
 	fmt.Printf("%T \n", d) // printing main.dog  expecting type pet
 
-8) practical scenario of interface as field in a struct
+[x] 8) practical scenario of interface as field in a struct
 	ref: https://stackoverflow.com/questions/26027350/go-interface-fields
 
-9) 2channels2unidirect.go not working
+9) 2channels2unidirect.go not working. need a better example to demonstrate pipeline. TODO
 
