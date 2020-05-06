@@ -51,3 +51,10 @@ see this blogpost for more details: https://blog.golang.org/slices-intro
 
 9) 2channels2unidirect.go not working. need a better example to demonstrate pipeline. TODO
 
+10) serving https requests from go code
+
+
+
+11) securing with JWT
+
+12) DI in golang using interfaces
