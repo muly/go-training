@@ -21,9 +21,9 @@ func main() {
 	out := 0
 
 	select {
-	case out = <- a:
+	case out = <-a:
 		fmt.Println(out)
-	case out = <- m:
+	case out = <-m:
 		fmt.Println(out)
 	default:
 		time.Sleep(4 * time.Second) // TODO: not working

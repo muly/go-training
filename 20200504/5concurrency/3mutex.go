@@ -1,18 +1,18 @@
 package main
 
-import ("fmt"
-"time"
-"sync"
+import (
+	"fmt"
+	"sync"
+	"time"
 )
 
 var result int
 var m sync.Mutex
 
-
-func main(){
-	go add(1,5)
-	go add(4,5)
-	go add(11,5)
+func main() {
+	go add(1, 5)
+	go add(4, 5)
+	go add(11, 5)
 	go multiply(1, 5)
 
 	time.Sleep(7 * time.Second)
@@ -23,7 +23,7 @@ func main(){
 }
 
 func add(a, b int) {
-	r := a+b
+	r := a + b
 	time.Sleep(5 * time.Second)
 	fmt.Println(a, b, r)
 
@@ -31,15 +31,13 @@ func add(a, b int) {
 	result = r
 	m.Unlock()
 }
-
 
 func multiply(a, b int) {
-	r := a*b
+	r := a * b
 	time.Sleep(5 * time.Second)
 	fmt.Println(a, b, r)
-	
+
 	m.Lock()
 	result = r
 	m.Unlock()
 }
-

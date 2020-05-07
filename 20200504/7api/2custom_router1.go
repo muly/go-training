@@ -8,8 +8,8 @@ import (
 
 func main() {
 
-	r:= http.NewServeMux()
-	
+	r := http.NewServeMux()
+
 	r.HandleFunc("/", helloHandler)
 	r.HandleFunc("/class", helloClass)
 
@@ -19,8 +19,8 @@ func main() {
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	
-	w.Write([]byte("Hello World! "+r.Method))
+
+	w.Write([]byte("Hello World! " + r.Method))
 }
 
 func helloClass(w http.ResponseWriter, r *http.Request) {

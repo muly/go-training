@@ -57,4 +57,12 @@ see this blogpost for more details: https://blog.golang.org/slices-intro
 
 11) securing with JWT
 
-12) DI in golang using interfaces
+12) DI packages required in golang using interfaces.
+
+13) project Athens (related go mod)
+
+14) ginkgo BDD
+
+15) gomock
+
+

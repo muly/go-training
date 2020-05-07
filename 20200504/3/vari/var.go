@@ -24,8 +24,6 @@ func AddAll(name string, marks ...int) int {
 	return sum
 }
 
-
-
 type MyAdd func(a, b int) (int, int)
 
 var F MyAdd = func(a, b int) (int, int) {

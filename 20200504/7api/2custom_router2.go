@@ -14,7 +14,7 @@ func (m *myHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		h(w, r)
 		return
 	}
-	w.Write([]byte("invalid path"+ r.URL.String()))
+	w.Write([]byte("invalid path" + r.URL.String()))
 }
 
 func main() {

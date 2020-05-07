@@ -22,5 +22,3 @@ func double(c chan int) {
 	time.Sleep(5 * time.Second)
 	c <- x * 2
 }
-
-

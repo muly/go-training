@@ -6,15 +6,15 @@ import (
 	"net/http"
 )
 
-
-type class struct{
+type class struct {
 }
-func (class) ServeHTTP(w http.ResponseWriter, r *http.Request){
+
+func (class) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Hello Class!"))
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello World! "+r.Method))
+	w.Write([]byte("Hello World! " + r.Method))
 }
 
 func main() {
@@ -25,5 +25,3 @@ func main() {
 		fmt.Println("restart serveer. encountered error, ", err)
 	}
 }
-
-

@@ -79,9 +79,8 @@ func main() {
 	// 	fmt.Println()
 	// }
 
-
 	{
-		Outerfor: 	
+	Outerfor:
 		for j := 0; j < 3; j++ {
 			i := 1
 			for {
@@ -100,9 +99,8 @@ func main() {
 		fmt.Println()
 	}
 
-
 	{
-	
+
 		for j := 0; j < 3; j++ {
 			i := 1
 			for {
@@ -119,7 +117,7 @@ func main() {
 			fmt.Println()
 		}
 		fmt.Println()
-		Endfor: 
+	Endfor:
 	}
 
 	s := []int{2, 4, 6, 8, 10}

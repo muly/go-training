@@ -9,7 +9,7 @@ import (
 )
 
 type class struct {
-	Id      int `json:"id,omitempty"`
+	Id      int    `json:"id,omitempty"`
 	Name    string `json:"name,omitempty"`
 	Address string `json:"address,omitempty"`
 }
@@ -45,7 +45,7 @@ func postClass(w http.ResponseWriter, r *http.Request) {
 
 	c.Name = "hello " + c.Name
 
-	w.Header().Add("Content-Type","application/json")
+	w.Header().Add("Content-Type", "application/json")
 	w.WriteHeader(http.StatusAccepted)
 
 	if err := json.NewEncoder(w).Encode(c); err != nil {

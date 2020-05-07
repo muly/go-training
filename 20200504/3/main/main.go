@@ -12,7 +12,6 @@ func main() {
 
 	fmt.Println(var2.AddAll("", 1, 2, 3, 4, 5))
 
-	
 	// exported function as type
 	var f2 var2.MyAdd = func(a, b int) (int, int) {
 		sum := a + b
@@ -30,9 +29,9 @@ func main() {
 		fmt.Println(su, av)
 	}
 
-
-		// exported struct
-	{	s := var2.Student{Fname : "f"}
+	// exported struct
+	{
+		s := var2.Student{Fname: "f"}
 		fmt.Println(s)
 
 	}
@@ -42,12 +41,9 @@ func main() {
 	d = &dog{name: "max"}
 	fmt.Printf("%T \n", d)
 
-
 }
 
 // // NOT ALLOWED
 // func (s var2.Student) fullName() string{
 // 	return s.fname+" "+s.lname
 // }
-
-

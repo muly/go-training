@@ -11,8 +11,8 @@ func main() {
 	c <- 5 // sending data into channel
 	c <- 15
 
-	x:= <- c // receving from a channel
-	y:= <- c
+	x := <-c // receving from a channel
+	y := <-c
 
 	fmt.Println(x, y)
 

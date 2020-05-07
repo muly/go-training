@@ -1,16 +1,16 @@
 package main
 
-import ("fmt")
-
+import (
+	"fmt"
+)
 
 type dog struct {
-	name  string
-	owner string
+	name    string
+	owner   string
 	address string
 }
 
-
-func main(){
+func main() {
 	var i int = 10
 	myFunc(i)
 
@@ -24,7 +24,6 @@ func main(){
 	myFunc(i64)
 }
 
-
-func myFunc(i interface{}){
-		fmt.Println(i)
+func myFunc(i interface{}) {
+	fmt.Println(i)
 }

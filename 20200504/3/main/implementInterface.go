@@ -1,6 +1,8 @@
 package main
 
-import("fmt")
+import (
+	"fmt"
+)
 
 type dog struct {
 	name    string
@@ -15,7 +17,6 @@ func (d *dog) ChangeOwner(newOwner string) {
 func (d *dog) ChangeName(newName string) {
 	d.name = newName
 }
-
 
 func (d dog) ShowDetail() {
 	fmt.Println(d)

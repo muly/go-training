@@ -15,19 +15,18 @@ func main() {
 	}
 }
 
-
 // helloHandler fdfdfdfdd
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello World! "+r.Method))
+	w.Write([]byte("Hello World! " + r.Method))
 }
 
 func helloClass(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Hello Class!"))
 }
 
-//// 
+////
 
-// GOOS=linux GCO_ENABLE=0 go build -o myapp 1hello.go 
+// GOOS=linux GCO_ENABLE=0 go build -o myapp 1hello.go
 
 // docker build -t myfirstdockerapp .
 

@@ -5,24 +5,24 @@ import (
 )
 
 type student struct {
-	fname  string
-	lname  string
-	marks int
-	fullName     full
+	fname    string
+	lname    string
+	marks    int
+	fullName full
 }
 
-type full func(a, b string) (string)
+type full func(a, b string) string
 
 func main() {
-	var f1 full = func(f, l string) string{
-		return f+" "+l
-	}	
+	var f1 full = func(f, l string) string {
+		return f + " " + l
+	}
 
 	var s1 student = student{
-		fname:  "F",
-		lname:  "L",
-		marks: 50,
-		fullName:     f1,
+		fname:    "F",
+		lname:    "L",
+		marks:    50,
+		fullName: f1,
 	}
 	fmt.Println(s1)
 

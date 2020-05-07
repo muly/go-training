@@ -1,12 +1,14 @@
 package main
 
-import("fmt")
+import (
+	"fmt"
+)
 
 func main() {
- 	var a int
+	var a int
 	p := &a // ref
 
-	v:= *p  // de ref
+	v := *p // de ref
 
 	print(a)
 	fmt.Println()
@@ -15,14 +17,14 @@ func main() {
 	print(v)
 	fmt.Println()
 
-{
-	var a int
-	var p *int
-	p = &a
-	print(a)
-	fmt.Println()
-	print(p)
-	fmt.Println()
-}
+	{
+		var a int
+		var p *int
+		p = &a
+		print(a)
+		fmt.Println()
+		print(p)
+		fmt.Println()
+	}
 
 }

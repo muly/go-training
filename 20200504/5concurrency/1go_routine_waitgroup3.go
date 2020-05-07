@@ -1,27 +1,23 @@
 package main
 
-import ("fmt"
-"time"
-"sync"
+import (
+	"fmt"
+	"sync"
+	"time"
 )
 
-
-
-func main(){
-
+func main() {
 
 	var wg sync.WaitGroup
 
 	wg.Add(1)
-	go add(1,5, &wg)
-	
+	go add(1, 5, &wg)
 
 	// wg.Add(1)
-	go multiply(11,5, &wg)
-
+	go multiply(11, 5, &wg)
 
 	wg.Wait() // time.Sleep(7 * time.Second)
-	
+
 }
 
 func add(a, b int, wg *sync.WaitGroup) {
@@ -29,7 +25,6 @@ func add(a, b int, wg *sync.WaitGroup) {
 	fmt.Println(a + b)
 	wg.Done()
 }
-
 
 func multiply(a, b int, wg *sync.WaitGroup) {
 	time.Sleep(4 * time.Second)

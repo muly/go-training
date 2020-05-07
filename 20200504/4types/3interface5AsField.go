@@ -4,17 +4,16 @@ import (
 	"fmt"
 )
 
-
 type pet interface {
 	showDetail()
 }
 
-type myS struct{
+type myS struct {
 	pet
 }
 
 type dog struct {
-	name    string 
+	name    string
 	owner   string
 	address string
 }
@@ -22,7 +21,6 @@ type dog struct {
 func (d dog) showDetail() {
 	fmt.Println(d)
 }
-
 
 func main() {
 	var d myS

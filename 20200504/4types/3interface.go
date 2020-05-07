@@ -11,8 +11,8 @@ type pet interface {
 }
 
 type dog struct {
-	name  string
-	owner string
+	name    string
+	owner   string
 	address string
 }
 
@@ -28,8 +28,6 @@ func (d *dog) changeName(newName string) { //NOTE: dog can have other methods no
 func (d dog) showDetail() {
 	fmt.Println(d)
 }
-
-
 
 func main() {
 	var d pet

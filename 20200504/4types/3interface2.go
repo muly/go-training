@@ -15,13 +15,11 @@ type renamablePet interface {
 	showDetail()
 }
 
-
 // this interface has same methods as pet interface
 type random interface {
 	changeOwner(string)
 	showDetail()
 }
-
 
 // dog type implements both the pet and renamablePet interfaces (as well as the random interface)
 type dog struct {
@@ -29,6 +27,7 @@ type dog struct {
 	owner   string
 	address string
 }
+
 func (d *dog) changeOwner(newOwner string) {
 	d.owner = newOwner
 }
@@ -45,6 +44,7 @@ type cat struct {
 	owner   string
 	address string
 }
+
 func (d *cat) changeOwner(newOwner string) {
 	d.owner = newOwner
 }
@@ -70,6 +70,5 @@ func main() {
 		d = &dog{name: "max"}
 		fmt.Printf("%T \n", d)
 	}
-
 
 }

@@ -4,7 +4,6 @@ import (
 	"fmt"
 )
 
-
 type pet interface {
 	showDetail()
 	// showDetail(string) // Note: overloading not allowed. ERROR: ambiguous selector d.showDetail
@@ -15,7 +14,7 @@ type renamablePet interface {
 }
 
 type dog struct {
-	name    string 
+	name    string
 	owner   string
 	address string
 }
@@ -28,7 +27,6 @@ func (d dog) showDetail(s string) {
 	fmt.Println(s, d)
 }
 
-
 func main() {
 	var d pet
 	d = &dog{name: "max"}
@@ -39,6 +37,5 @@ func main() {
 	var r renamablePet
 	r = &dog{name: "max"}
 	r.showDetail()
-
 
 }

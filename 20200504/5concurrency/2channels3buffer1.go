@@ -11,7 +11,6 @@ func main() {
 	c <- 5 // sending data into channel
 	c <- 15
 
-
 	fmt.Println(x)
 
 }

@@ -5,20 +5,19 @@ import (
 )
 
 type myInt int
-func (d myInt) String()string {
-	return fmt.Sprintf("my value is %s\n",d)
+
+func (d myInt) String() string {
+	return fmt.Sprintf("my value is %s\n", d)
 }
 
-
-
 type dog struct {
-	name    string 
+	name    string
 	owner   string
 	address string
 }
 
-func (d dog) String()string {
-	return fmt.Sprintf("Dog Name: %s \nOwner Name: %s\n",d.name, d.owner)
+func (d dog) String() string {
+	return fmt.Sprintf("Dog Name: %s \nOwner Name: %s\n", d.name, d.owner)
 }
 
 func main() {

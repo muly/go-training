@@ -5,15 +5,15 @@ import (
 )
 
 type student struct {
-	fname  string
-	lname  string
+	fname string
+	lname string
 	marks int
 }
 
 func main() {
 	var s1 student = student{
-		fname:  "F",
-		lname:  "L",
+		fname: "F",
+		lname: "L",
 		marks: 50,
 	}
 

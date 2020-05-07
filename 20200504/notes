@@ -1,0 +1,18 @@
+
+
+
+    CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+    docker build -t customer .
+    docker run -p 8080:8080 customer
+
+
+    
+    1. install protoc:
+    2. install go plugin:
+        go get github.com/golang/protobuf/proto
+        go install github.com/golang/protobuf/proto
+    3. write proto file:
+    4. generate code:
+        protoc --go_out=. *.proto
+    5. references:
+        https://tutorialedge.net/golang/go-protocol-buffer-tutorial/
