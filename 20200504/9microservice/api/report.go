@@ -16,7 +16,7 @@ func GetReports(w http.ResponseWriter, r *http.Request) {
 	}
 
 	report, err := service.GetReports(loc[0])
-	if err != nil{
+	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}

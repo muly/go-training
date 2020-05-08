@@ -15,9 +15,7 @@ const (
 	dbname   = "postgres"
 )
 
-
-
-func Open() (*sql.DB , error){
+func Open() (*sql.DB, error) {
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 	// psqlInfo := "postgres://postgres:@localhost:5432/postgres?sslmode=disable"
 

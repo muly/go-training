@@ -4,7 +4,7 @@
 // 	protoc        v3.9.1
 // source: customer.proto
 
-package main
+package data
 
 import (
 	proto "github.com/golang/protobuf/proto"

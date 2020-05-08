@@ -6,11 +6,11 @@ import (
 	"github.com/muly/go-training/20200504/9microservice/models"
 )
 
-func GetReports(loc string) (models.Report , error){
+func GetReports(loc string) (models.Report, error) {
 	// add business logic here
 
 	cust, err := client.GetCustomer(loc)
-	if err != nil{
+	if err != nil {
 		return models.Report{}, err
 	}
 

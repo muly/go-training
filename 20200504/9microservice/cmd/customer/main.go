@@ -9,7 +9,6 @@ import (
 	// "github.com/muly/go-training/20200504/9microservice/data"
 )
 
-
 func main() {
 
 	// err := data.Open()

@@ -19,7 +19,6 @@ func GetCustomersByFilter(loc string) models.Customer {
 		fmt.Println(err)
 		return models.Customer{}
 	}
-	
 
 	rows, err := dbConn.Query(fmt.Sprintf("SELECT name, address from public.customer where address = '%s'", loc))
 	if err != nil {
@@ -30,7 +29,7 @@ func GetCustomersByFilter(loc string) models.Customer {
 	c := models.Customer{}
 	for rows.Next() {
 		var name, address string
-		err := rows.Scan( &name, &address)
+		err := rows.Scan(&name, &address)
 		if err != nil {
 			fmt.Println(err)
 			return models.Customer{}
