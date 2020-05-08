@@ -16,10 +16,13 @@ func main() {
 		log.Fatalf("Error:\n %s ", err)
 	}
 
+	nc.
+
 	fmt.Println("Published message...")
 
-	for range time.NewTicker(5 * time.Second).C {
-		nc.Publish("kpk.pk", []byte("hello world !"))
+	for i := 0; i < 100; i++ { // range  time.NewTicker(5 * time.Second).C {
+		nc.Publish("customer.updates", []byte(fmt.Sprintf("new message %d", i)))
+		time.Sleep(5 * time.Second)
 	}
 
 	runtime.Goexit()

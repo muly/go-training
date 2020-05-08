@@ -1,0 +1,11 @@
+
+install nats:
+    brew install nats-streaming-server
+    [OR]
+    docker pull nats-streaming
+
+run:
+    ./nats-streaming-server 
+
+
+https://docs.nats.io/developing-with-nats

@@ -55,7 +55,7 @@ see this blogpost for more details: https://blog.golang.org/slices-intro
 
 
 
-11) securing with JWT
+[x] 11) securing with JWT
 
 12) DI packages required in golang using interfaces.
 
@@ -64,5 +64,12 @@ see this blogpost for more details: https://blog.golang.org/slices-intro
 14) ginkgo BDD
 
 15) gomock
+
+16) Go-kit
+
+17) even driven arch related topic
+
+
+
 
 

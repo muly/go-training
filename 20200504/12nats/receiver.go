@@ -5,7 +5,7 @@ import (
 	"log"
 	"runtime"
 
-	"github.com/nats-io/nats.go"
+	nats "github.com/nats-io/nats.go"
 )
 
 func main() {
@@ -17,13 +17,23 @@ func main() {
 
 	fmt.Println("Receiving message...")
 
-	nc.Subscribe("kpk.pk", func(m *nats.Msg) {
+	s, err := nc.Subscribe("customer.updates", func(m *nats.Msg) {
 		log.Printf("[Received kpk.pk] %s", string(m.Data))
-	})
 
-	nc.Subscribe("kpk.*", func(m *nats.Msg) {
-		log.Printf("[Received kpk.*] %s", string(m.Data))
 	})
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	// time.Sleep(5 * time.Second)
+	// s.Unsubscribe()
+
+	s.AutoUnsubscribe(10)
+
+	// nc.Subscribe("kpk.*", func(m *nats.Msg) {
+	// 	log.Printf("[Received kpk.*] %s", string(m.Data))
+	// })
 
 	runtime.Goexit()
 }
