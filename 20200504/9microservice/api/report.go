@@ -15,6 +15,9 @@ func GetReports(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+
+	defer r.Body.Close()
+
 	report, err := service.GetReports(loc[0])
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

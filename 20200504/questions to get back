@@ -51,7 +51,7 @@ see this blogpost for more details: https://blog.golang.org/slices-intro
 
 9) 2channels2unidirect.go not working. need a better example to demonstrate pipeline. TODO
 
-10) serving https requests from go code
+[] 10) serving https requests from go code
 
 
 
@@ -60,6 +60,7 @@ see this blogpost for more details: https://blog.golang.org/slices-intro
 12) DI packages required in golang using interfaces.
 
 13) project Athens (related go mod)
+	https://docs.gomods.io/
 
 14) ginkgo BDD
 

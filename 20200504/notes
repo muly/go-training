@@ -34,3 +34,15 @@
     
     auth and encryption related to grpc:
         https://grpc.io/docs/guides/auth/
+
+
+    DI packages:
+        https://github.com/uber-go/dig
+        https://github.com/google/wire
+
+
+    linter:
+        gofmt: 
+        : to detect memory leaks
+        gocyclo: to detect cyclomatic complexity
+        gosimple: 
