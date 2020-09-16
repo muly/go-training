@@ -1,0 +1,8 @@
+
+// channel len()
+// channel internal
+// channel.close() and corresponding boolean flag
+// channels for wait in place of wait group
+// channels for data sharing: as parameter to go routine
+// sync between multiple go routines: relay race simulation
+
