@@ -1,5 +1,5 @@
 
-// channel len()
+// channel len(), range, cap
 // channel internal
 // channel.close() and corresponding boolean flag
 // channels for wait in place of wait group

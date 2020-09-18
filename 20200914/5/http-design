@@ -1,0 +1,123 @@
+
+// RESTful
+
+
+//// HTTP request/response
+// HTTP methods: POST, PUT, PATCH, DELETE, GET
+// URL: resource path, query parameters (? &)
+// Header: key value pair
+// Body: raw data (json, csv, plain text, xml)
+
+
+// student information retrieval 
+
+
+// resource: student
+	name
+	email
+	class
+
+// data exchange format: json, csv, xml, protobuff, ...
+
+// operations: api endpoints
+1. create student(s)
+	req url: /student [prefered]
+		/students/new [x]
+		api/students [ok]
+	req method: POST
+	req body: 
+	[
+		{
+			"name":"A",
+			"email":"a@gmail.com",
+			"class":"class 1",
+			"english": 90,
+			"maths": 80
+		},
+		{
+			"name":"B",
+			"email":"b@gmail.com",
+			"class":"class 2",
+			"english": 90,
+			"maths": 80
+		}
+	]
+	req headers:
+		Content-type: application/json
+		Accept: application/json
+	resp body: 
+	[
+		{
+			"id": 1,
+			"name":"A",
+			"email":"a@gmail.com",
+			"class":"class 1",
+			"english": 90,
+			"maths": 80
+		},
+		{
+			"id": 2,
+			"name":"B",
+			"email":"b@gmail.com",
+			"class":"class 2",
+			"english": 90,
+			"maths": 80
+		}
+	]
+	resp header: application/json
+	resp code: 201, 400, 500
+2. read a student record
+	req url: /student/id
+	req method: GET
+	req body: empty
+	resp body: 
+	{
+		"id": 2,
+		"name":"B",
+		"email":"b@gmail.com",
+		"class":"class 1",
+		"english": 90,
+		"maths": 80
+	}
+	resp code: 200, 400, 500
+3. read multiple students records based on search criteria
+	req url: /student?class="class 1"
+	req method: GET
+	req body: empty
+	resp body: 
+	[
+		{
+			"id": 2,
+			"name":"B",
+			"email":"b@gmail.com",
+			"class":"class 1",
+			"english": 90,
+			"maths": 80
+		}
+	]
+	resp code: 200, 400, 500
+4. update a student record
+	req url: /student/id
+	req method: PATCH
+	req body: 
+		{	
+			"email":"new@gmail.com",
+		}
+	resp body: 
+		{
+			"id": 2,
+			"name":"B",
+			"email":"new@gmail.com",
+			"class":"class 1",
+			"english": 90,
+			"maths": 80
+		}
+	resp header: application/json
+	resp code: 201, 400, 500
+5. delete a student record
+	req url: /student/id
+	req method: DELETE
+	req body: empty
+	resp body: empty
+	resp code: 201, 400, 500
+	resp header: not required
