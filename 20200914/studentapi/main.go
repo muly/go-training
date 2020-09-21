@@ -23,7 +23,11 @@ func main() {
 
 	r := mux.NewRouter()
 
-	// r.HandleFunc("/student", api.GetStudentHandler(session)).Methods(http.Method)
+
+	// POST
+	// GET with filter; name 
+	// DELETE
+	// PUT
 	r.HandleFunc("/student/{id}", api.GetStudentHandler(session)).Methods(http.MethodGet)
 
 	log.Fatal(http.ListenAndServe(":8080", r))

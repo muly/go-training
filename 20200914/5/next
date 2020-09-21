@@ -5,13 +5,13 @@
 // [x] code for endpoints
 // [x] middleware
 // docker
+    // full size
+    // compact size with multi stage: https://medium.com/travis-on-docker/multi-stage-docker-builds-for-creating-tiny-go-images-e0e1867efe5a
 // [x] go mod
 // httptest
-
-
 // jwt
     // https://hackernoon.com/creating-a-middleware-in-golang-for-jwt-based-authentication-cx3f32z8
-    
+
 // Advanced Concurrency patterns: theory
 // race condition detection example
 // Go Tools: others
