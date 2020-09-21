@@ -1,15 +1,17 @@
 
 
-// gorilla mux router
-// db introduction
-// code for endpoints
-// middleware
-// jwt
-// httptest
+// [x] gorilla mux router
+// [x] db introduction
+// [x] code for endpoints
+// [x] middleware
 // docker
-// go mod
+// [x] go mod
+// httptest
 
 
+// jwt
+    // https://hackernoon.com/creating-a-middleware-in-golang-for-jwt-based-authentication-cx3f32z8
+    
 // Advanced Concurrency patterns: theory
 // race condition detection example
 // Go Tools: others
