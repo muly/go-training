@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package customer;
+
+import "google/protobuf/empty.proto";
+
+service CustomerData{
+    rpc Insert (customer) returns (customer){}
+    rpc GetAll (google.protobuf.Empty) returns (customers){}
+}
+
+
+message customer {
+    string name = 1;
+    string address = 2;
+}
+
+message customers{
+    repeated customer data = 1;
+}

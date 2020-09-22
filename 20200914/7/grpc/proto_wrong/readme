@@ -1,0 +1,8 @@
+
+## install
+# https://grpc.io/docs/languages/go/quickstart/
+# protoc 
+# go plugin: go_out
+
+## generate
+# protoc . --go_out=plugins=grpc:.

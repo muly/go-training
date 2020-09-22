@@ -4,16 +4,23 @@
 // [x] db introduction
 // [x] code for endpoints
 // [x] middleware
-// docker
+// [x]docker
     // full size
     // compact size with multi stage: https://medium.com/travis-on-docker/multi-stage-docker-builds-for-creating-tiny-go-images-e0e1867efe5a
 // [x] go mod
-// httptest
-// jwt
+// [x] httptest
+// [x] jwt
     // https://hackernoon.com/creating-a-middleware-in-golang-for-jwt-based-authentication-cx3f32z8
+// [x] grpc intro
 
-// Advanced Concurrency patterns: theory
-// race condition detection example
-// Go Tools: others
+// [x] Go Tools: 
+    go cmd, 
+    golangci-lint: https://golangci-lint.run/
+// [x] Advanced Concurrency patterns: theory
+    https://blog.golang.org/io2013-talk-concurrency
+    https://talks.golang.org/2012/concurrency.slide#39
+// [x] race condition detection example
+    https://www.geeksforgeeks.org/race-condition-in-golang/
+// [x] more on Using composition pattern, with more examples
+    http://blog.ralch.com/tutorial/design-patterns/golang-composite/
 // Defer, Panic and Recover assignments in google classroom
-// more on Using composition pattern, with more examples
