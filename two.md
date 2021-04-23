@@ -1,0 +1,59 @@
+# 20200914
+1
+    for
+    maps
+    pointer
+    slice
+    struct
+    switch
+2
+    packages
+    closure
+    defer
+    error
+    functions
+    panic-recover
+    pointer-function
+    swap
+    variadic-func
+3
+    concurrency
+    goroutine-waitgroup
+    interfaces
+    methods
+4
+    concurrency
+    unit-tests
+5
+    concurrency
+    error
+    file
+    http
+    json
+    pointer
+    stringer
+6
+    mysql
+    gorilla/mux
+    jwt
+    middleware
+    mongo
+7
+    docker
+    grpc
+    http-test
+    struct-embeded
+    race-map
+    rave-var
+student api
+    service
+    api
+    models
+main-introduction
+    hello program
+projects-student
+    crud
+    api
+    cmd
+    db
+    json
