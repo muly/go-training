@@ -12,12 +12,40 @@ func main() {
 	// 	fmt.Println(a)
 	// }
 
-	// initializing: declare and initialize in same line
+	// {// initializing: declare and initialize in same line
+	// 	var a []int = []int{1, 2, 3, 4}
+	// 	fmt.Println(a)
+	// }
 
-	// initializing: short hand form
+	// {// initializing: declare and initialize in same line, inferring the datatype
+	// 	var a  = []int{1, 2, 3, 4}
+	// 	fmt.Println(a)
+	// }
+
+	// { // initializing: short hand form
+	// a  := []int{1, 2, 3, 4}
+	// fmt.Println(a)
+	// }
+
+	// { // length:
+	// var a []int = []int{1, 2, 3, 4}
+	// 	fmt.Println(len(a))
+	// }
 
 	//
-	// assigning one slice to another slice: of same length
+	// { // assigning one slice to another slice: of same length
+	// 	var a []int
+	// 	a = []int{1, 2, 3, 4}
+
+	// 	var b []int
+	// 	b = []int{20,30,40,50}
+	// 	fmt.Println(len(a), len(b))
+
+	// 	b = a
+
+	// 	fmt.Println(len(a), len(b))
+	// 	fmt.Println(a, b)
+	// }
 
 	// { // assigning one slice to another slice: of different length.
 	// 	var a []int
@@ -34,25 +62,74 @@ func main() {
 	// }
 
 	//
-	// re-initializing the slice:
+	// { // re-initializing the slice:
+	// var a []int = []int{1, 2, 3, 4}
 
-	// re-initializing the slice: with different length
+	// a =  []int{20, 30, 40, 50}
+	// 	fmt.Println(a)
+	// }
 
-	//
-	// un initialized slice:
+	// { // re-initializing the slice: with different length
+	// var a []int = []int{1, 2, 3, 4}
 
-	//
-	// append: a single element
-	// append: multiple elements
-	// append: using another slice contents (... expansion notation)
-	// append: skipping assignment
-
-	//
-	// slice and underlying array: TODO: need a good example to demonstrate this by printing the addresses of slice and an array. how to see the corresponding array details of a slice variable.
+	// a =  []int{20, 30, 40, 50, 60, 70}
+	// 	fmt.Println(a, len(a))
+	// }
 
 	//
-	// capacity of a slice: intro
-	// capacity of a slice: growing beyond: Note: while explaining this topic, I need to add references to address of the underlying array and how it changes when we grow a slice beyond its current capacity.
+	// { // un initialized slice: initialized with 0 length
+	// var a []int
+	// 	fmt.Println(a, len(a))
+	// }
+
+	//
+	// { // append: a single element
+	// 	var a []int = []int{1, 2, 3, 4}
+	// 	fmt.Printf("len=%d  %v\n", len(a), a)
+
+	// 	a = append(a, 5)
+	// 	fmt.Printf("len=%d  %v\n", len(a), a)
+	// }
+
+	// { // append: multiple elements
+	// 	var a []int = []int{1, 2, 3, 4}
+	// 	fmt.Printf("len=%d  %v\n", len(a), a)
+
+	// 	a = append(a, 5, 6, 7)
+	// 	fmt.Printf("len=%d  %v\n", len(a), a)
+	// }
+
+	// { // append: using another slice contents (... expansion notation)
+	// 	var a []int = []int{1, 2, 3, 4}
+	// 	fmt.Printf("len=%d  %v\n", len(a), a)
+
+	// 	var b = []int{5, 6, 7}
+
+	// 	a = append(a, b...)
+	// 	fmt.Printf("len=%d  %v\n", len(a), a)
+	// }
+
+	// { // append: skipping assignment
+	// 	var a []int = []int{1, 2, 3, 4}
+	// 	fmt.Printf("len=%d  %v\n", len(a), a)
+
+	// 	append(a, 5) // ERROR: append(a, 5) (value of type []int) is not used
+	// 	fmt.Printf("len=%d  %v\n", len(a), a)
+	// }
+
+	//
+	// { // slice and underlying array: 
+	// TODO: need a good example to demonstrate this by printing the addresses of slice and an array. how to see the corresponding array details of a slice variable.
+	// TODO: TODO:  TODO: example to show the slice points to an underlying array
+	//
+	// }
+
+	//
+	// { // capacity of a slice: intro
+		
+	// }
+
+	// { // capacity of a slice: growing beyond: Note: while explaining this topic, I need to add references to address of the underlying array and how it changes when we grow a slice beyond its current capacity.
 
 	// slicing an array: TODO: need to add sub topics
 
@@ -79,7 +156,7 @@ func main() {
 	// 	fmt.Println(s4, len(s4)) // [1 2 3 4] 4
 	// }
 
-	// { // append: todo: need better example to demonstrate change or memory locaion for a slice when it grows beyond capacity.
+	// { // append: todo: need better example to demonstrate change or memory location for a slice when it grows beyond capacity.
 	// 	var s string = "some value"
 	// 	var a []int
 	// 	a = []int{1, 2, 3, 4}
@@ -91,8 +168,6 @@ func main() {
 	// 	print(&a)
 	// 	fmt.Println(a, len(a))
 	// }
-
-	// TODO: example to show the slice points to an underlying array
 
 	// capacity:
 
@@ -159,13 +234,13 @@ func main() {
 	// 	fmt.Println(a)
 	// }
 
-	{
-		var a []int
-		a = make([]int, 2)
+	// {
+	// 	var a []int
+	// 	a = make([]int, 2)
 
-		fmt.Println(len(a), cap(a))
-		fmt.Println(a)
-	}
+	// 	fmt.Println(len(a), cap(a))
+	// 	fmt.Println(a)
+	// }
 
 	// {
 	// 	var a []int

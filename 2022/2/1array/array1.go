@@ -16,9 +16,17 @@ func main() {
 	// }
 
 	// { // initializing: declare and initialize in same line
+	// 	var a [4]int = [4]int{1, 2, 3, 4}
+	// 	fmt.Println(a)
+	// }
+
+	// { // initializing: declare and initialize in same line, inferring the datatype
 	// 	var a = [4]int{1, 2, 3, 4}
 	// 	fmt.Println(a)
 	// }
+
+
+
 
 	// { // initializing: short hand form
 	// 	a := [4]int{1, 2, 3, 4}
