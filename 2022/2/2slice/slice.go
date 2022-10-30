@@ -1,8 +1,6 @@
 //
 package main
 
-import "fmt"
-
 func main() {
 
 	//
@@ -118,7 +116,7 @@ func main() {
 	// }
 
 	//
-	// { // slice and underlying array: 
+	// { // slice and underlying array:
 	// TODO: need a good example to demonstrate this by printing the addresses of slice and an array. how to see the corresponding array details of a slice variable.
 	// TODO: TODO:  TODO: example to show the slice points to an underlying array
 	//
@@ -126,14 +124,93 @@ func main() {
 
 	//
 	// { // capacity of a slice: intro
-		
+	// 	// capacity of a slice is the maximum number of elements the slice can hold.
+	// 	// if we want to add more elements beyond the capacity, a new slice needs to be created.
+	// 	// append() function will do this automatically for us.
+	// 	//
+	// 	// in the below example, the length and capacity is same because of the way we are initializing it.
+	// 	var a [4]int
+	// 	a = [4]int{1, 2, 3, 4}
+	// 	fmt.Printf("len=%d  cap=%d %v\n", len(a), cap(a), a)
 	// }
 
 	// { // capacity of a slice: growing beyond: Note: while explaining this topic, I need to add references to address of the underlying array and how it changes when we grow a slice beyond its current capacity.
 
+	// // make(): TODO: TODO: need to format and add sub topics
+	// { // make(): with length and capacity
+	// 	var a []int
+	// 	a = make([]int, 2, 4)
+
+	// 	fmt.Println(len(a), cap(a))
+	// 	fmt.Println(a)
+	// }
+
+	// { // make(): with capacity only
+	// 	var a []int
+	// 	a = make([]int, 0, 4)
+
+	// 	fmt.Println(len(a), cap(a))
+	// 	fmt.Println(a)
+	// }
+
+	// { // make(): with length only
+	// capacity will be defaulted to the length
+	// 	var a []int
+	// 	a = make([]int, 2)
+
+	// 	fmt.Println(len(a), cap(a))
+	// 	fmt.Println(a)
+	// }
+
+	// { // make and append: make with 0 length
+	// 	var a []int
+	// 	a = make([]int, 0, 4)
+
+	// 	fmt.Printf("len=%d  cap=%d %v\n", len(a), cap(a), a)
+
+	// 	a = append(a, 50)
+	// 	fmt.Printf("len=%d  cap=%d %v\n", len(a), cap(a), a)
+	// }
+
+	// { // make and append: make with non zero length
+	// 	var a []int
+	// 	a = make([]int, 2, 4)
+
+	// 	fmt.Printf("len=%d  cap=%d %v\n", len(a), cap(a), a)
+
+	// 	a = append(a, 50)
+	// 	fmt.Printf("len=%d  cap=%d %v\n", len(a), cap(a), a)
+
+	// 	a[1] = 60 // you can always change the content of the initial cells
+	// 	fmt.Printf("len=%d  cap=%d %v\n", len(a), cap(a), a)
+	// }
+
+	// { // slice is a pointer to underlying array: slicing a array
+	// 	// to demonstrate that lets slice an array and see the metadata for the created slice
+	// 	var a [4]int
+	// 	a = [4]int{1, 2, 3, 4}
+	// 	fmt.Printf(" %p\n", &a)
+
+	// 	s := a[0:2]
+	// 	fmt.Printf(" %p\n", &s)
+
+	// 	fmt.Printf(" %p\n", &s[0]) // this gives the address of the first element, which is the address of the underlying array
+	// }
+
+	// { // slice is a pointer to underlying array: creating a slice directly
+	// 	// lets create slice without explicitly creating an array
+	// 	var s = []int{1, 2, 3, 4}
+
+	// 	fmt.Printf(" %p\n", &s)
+
+	// 	fmt.Printf(" %p\n", &s[0]) // so, this should be the pointer to the underlying array
+	// }
+
 	// slicing an array: TODO: need to add sub topics
 
 	// slicing a slice: TODO: need to add sub topics
+
+	// copy() internal function:
 
 	/////////////////////////////////////////////////////////////////////
 
@@ -216,44 +293,6 @@ func main() {
 	// 		fmt.Println(b)
 	// 	}
 	// 	fmt.Println(len(a),cap(a))
-	// }
-
-	// {
-	// 	var a []int
-	// 	a = make([]int, 2, 4)
-
-	// 	fmt.Println(len(a), cap(a))
-	// 	fmt.Println(a)
-	// }
-
-	// {
-	// 	var a []int
-	// 	a = make([]int, 0, 4)
-
-	// 	fmt.Println(len(a), cap(a))
-	// 	fmt.Println(a)
-	// }
-
-	// {
-	// 	var a []int
-	// 	a = make([]int, 2)
-
-	// 	fmt.Println(len(a), cap(a))
-	// 	fmt.Println(a)
-	// }
-
-	// {
-	// 	var a []int
-	// 	a = make([]int, 2, 4)
-
-	// 	fmt.Println(len(a),cap(a))
-	// 	fmt.Println(a)
-
-	// 	a = append(a, 50)
-	// 	fmt.Println(a)
-
-	// 	a[1]= 60
-	// 	fmt.Println(a)
 	// }
 
 	// {
