@@ -1,0 +1,122 @@
+# Arrays
+
+## 1 declaring an array
+.play 1declaring/1declaring.go
+
+## 1 declaring an array
+but uninitialized
+
+.play 1declaring/2declaredButUninitialized.go
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 2 initializing an array
+1 declare and initialize in separate lines
+
+.play 2initializing/1declareAndInitialize_inSeparateLines.go
+
+## 2 initializing an array
+2 initializing: declare and initialize in same line
+
+.play 2initializing/2declareAndInitialize_inSameLine.go
+
+## 2 initializing an array
+3 initializing: declare and initialize in same line, inferring datatype
+
+.play 2initializing/3declareAndInitialize_inSameLineInferringDatatype.go
+
+## 2 initializing an array
+4 initializing: short hand form
+
+.play 2initializing/4declareAndInitialize_inSameLineShortHandForm.go
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 3 assigning
+assigning one array to another array
+
+.play 3assigning/1fromAnotherArray.go
+
+
+## 3 assigning
+assigning one array to another array of different length. array has the length as part of the data type'
+
+.play 3assigning/2fromAnotherArrayOfDifferentLength.go
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 4 reinitializing
+reinitializing the array
+
+.play 4reinitializing/1fromAnotherArray.go
+
+
+## 4 reinitializing
+reinitializing the array: with different length
+
+.play 4reinitializing/2fromAnotherArrayOfDifferentLength.go
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 5 accessingIndividualElement
+accessing individual element
+
+.play 5accessingIndividualElement/1reading.go
+
+## 5 accessingIndividualElement
+accessing individual element: outside the boundary
+
+.play 5accessingIndividualElement/2readingOutsideBoundary.go
+
+## 5 accessingIndividualElement
+changing individual element
+
+.play 5accessingIndividualElement/3writing.go
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 6 len() cap() system functions
+len() system functions
+
+.play 6lenCap/1len.go
+
+
+## 6 len() cap() system functions
+6lenCap() system functions
+
+.play 6lenCap/2cap.go
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+## 7 for Loop
+for loop: length is hard coded
+
+.play 7forLoop/1manualCounter_lengthHardcoded.go
+
+## 7 for Loop
+for loop: using len()
+
+.play 7forLoop/2manualCounter_usingLenFunction.go
+
+## 7 for Loop
+range: intro
+
+.play 7forLoop/3range_withIndexAndValue.go
+
+## 7 for Loop
+range: ignoring the index
+
+.play 7forLoop/4range_withIndexIgnored.go
+
+## 7 for Loop
+range: ignoring the value
+
+.play 7forLoop/5range_withValueIgnored.go
+
+## 7 for Loop
+range: ignoring the value; simplified form
+
+.play 7forLoop/6range_withValueIgnoredInSimpleForm.go
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
