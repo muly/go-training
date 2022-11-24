@@ -2,7 +2,7 @@
 
 
 ## installing present tool
-    go install golang.org/x/tools/present
+    go install golang.org/x/tools/cmd/present
 
 ## before using the present tool
 - make sure go mod is initialized on the parent folder
