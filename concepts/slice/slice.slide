@@ -1,31 +1,31 @@
 # Slice
 
-## 1 declaring an slice
+## 1 declaring a slice
 .play 1declaring/1declaring.go
 
-## 1 declaring an slice
+## 1 declaring a slice
 but uninitialized
 
 .play 1declaring/2declaredButUninitialized.go
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-## 2 initializing an slice
+## 2 initializing a slice
 1 declare and initialize in separate lines
 
 .play 2initializing/1declareAndInitialize_inSeparateLines.go
 
-## 2 initializing an slice
+## 2 initializing a slice
 2 initializing: declare and initialize in same line
 
 .play 2initializing/2declareAndInitialize_inSameLine.go
 
-## 2 initializing an slice
+## 2 initializing a slice
 3 initializing: declare and initialize in same line, inferring datatype
 
 .play 2initializing/3declareAndInitialize_inSameLineInferringDatatype.go
 
-## 2 initializing an slice
+## 2 initializing a slice
 4 initializing: short hand form
 
 .play 2initializing/4declareAndInitialize_inSameLineShortHandForm.go
