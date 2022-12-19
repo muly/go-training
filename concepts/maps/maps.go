@@ -2,20 +2,29 @@ package main
 
 func main() {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Go maps in action: 	https://go.dev/blog/maps
+	// Introduction
+	// maps data-structure holds the key value pairs
 
 	// syntax: map[KeyType]ValueType
 
+	// reference: 
+	// Go maps in action: https://go.dev/blog/maps
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// { // ## 1 declare
-	// 	// 1declareOnly.go
+	// ## declaring a map
+	// 01declaring/
+
+	// 1declareOnly.go
+	// { 
+	// 	
 	// 	var m map[int]string
 	//
 	// 	fmt.Println(m)
 	// }
 
-	// { // ## 1 declare
-	// 	// 2declareButUninitialized.go
+	// 2declareButUninitialized.go
+	// { 
+	// 	
 	// 	var m map[int]string // not initialized
 	//
 	// 	if m == nil {
@@ -24,8 +33,11 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// ## 2 initialize
+	// ## 2 initializing a map
+	// 02initializing/
+
 	// // 1 declare and initialize in separate lines
+	// // 1declareAndInitialize_inSeparateLines_Example1.go
 	// {
 	// 	var m map[int]string
 	// 	m = map[int]string{1: "one", 3: "three", 0: "zero"}
@@ -34,6 +46,7 @@ func main() {
 	// }
 
 	// // another example: map of phone number to person name
+	// 1declareAndInitialize_inSeparateLines_Example2.go
 	// {
 	// 	var m map[string]string
 	// 	m = map[string]string{
@@ -44,33 +57,36 @@ func main() {
 	// 	fmt.Println(m)
 	// }
 
-	// ## 2 initialize
-	// 2 initializing: declare and initialize in same line
+
+	// initializing: declare and initialize in same line
+	// 2declareAndInitialize_inSameLine.go
 	// {
 	// 	var m map[int]string = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
 	// 	fmt.Println(m)
 	// }
 
-	// ## 2 initialize
-	// 3 initializing: declare and initialize in same line, inferring datatype
+	// initializing: declare and initialize in same line, inferring datatype
+	// 3declareAndInitialize_inSameLineInferringDatatype.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
 	// 	fmt.Println(m)
 	// }
 
-	// ## 2 initialize
-	// 4 initializing: short hand form
+	
+	// initializing: short hand form
+	// 4declareAndInitialize_inSameLineShortHandForm.go
 	// {
 	// 	m := map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
 	// 	fmt.Println(m)
 	// }
 
-	// ## 2 initialize
-	// 5 initializing: by individual values on a nil map
+
+	// initializing: by individual values on a nil map
 	// A nil map behaves like an empty map when reading, but attempts to write to a nil map will cause a runtime panic;
+	// 5declareAndInitialize_byIndividualValuesOnANilMap.go
 	// {
 	// 	var m map[int]string // nil map, i.e. not initialized
 	//
@@ -79,8 +95,9 @@ func main() {
 	// 	fmt.Println(m)
 	// }
 
-	// ## 2 initialize
-	// 6 initializing: individual values, after initializing
+
+	// initializing: individual values, after initializing
+	// 6declareAndInitialize_individualValues_afterInitializing.go
 	// {
 	// 	var m map[int]string = map[int]string{9: "nine"}
 	//
@@ -89,8 +106,9 @@ func main() {
 	// 	fmt.Println(m)
 	// }
 
-	// ## 2 initialize
-	// 6 initializing: individual values, after empty initializing
+
+	// initializing: individual values, after empty initializing
+	// 7declareAndInitialize_individualValues_afterEmptyInitializing.go
 	// {
 	// 	var m map[int]string = map[int]string{}
 	//
@@ -100,8 +118,11 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// ## 3 assigning
+	// ## assigning
+	// 03assigning/
+
 	// assigning one map to another map
+	// 1fromAnotherMap.go
 	// {
 	// 	var m map[int]string
 	//
@@ -114,8 +135,11 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// ## 4 reinitializing
+	// ## reinitializing
+	// 04reinitializing/
+
 	// reinitializing the map
+	// 1withAnotherMap.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
@@ -124,9 +148,13 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// ## 5 accessing Individual Element
+	// ## accessing Individual Element of the map
+	// 5accessingIndividualElement/
+
+
 	// reading individual element:
 	// syntax: map_var[key]
+	// 1reading.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	// 	fmt.Println(m[1])
@@ -135,9 +163,10 @@ func main() {
 	// 	fmt.Println(m[k])
 	// }
 
-	// ## 5 accessing Individual Element
+
 	// writing individual element
 	// syntax: map_var[key]=new_value
+	// 2writing.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
@@ -149,10 +178,11 @@ func main() {
 	//
 	// }
 
-	// ## 5 accessing Individual Element
+
 	// overwriting individual element
 	// key_value has to be unique
 	// syntax: map_var[key]=new_value
+	// 3writing_overwriting.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
@@ -163,8 +193,9 @@ func main() {
 	//
 	// }
 
-	// ## 5 accessing Individual Element
+
 	// accessing individual element: with existing key with empty value
+	// 4reading_existingKeyWithEmptyValue.go
 	// {
 	// 	var m = map[int]float32{1: 111, 3: 333, 9: 0}
 	//
@@ -172,8 +203,9 @@ func main() {
 	// 	fmt.Println(m)
 	// }
 
-	// ## 5 accessing Individual Element
+
 	// accessing individual element: with not existing key
+	// 5reading_withNotExistingKey.go
 	// {
 	// 	var m = map[int]float32{1: 111, 3: 333}
 	//
