@@ -8,14 +8,14 @@ func main() {
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// { // ## 1 declare
-	// 	// delcare only
+	// 	// 1declareOnly.go
 	// 	var m map[int]string
 	//
 	// 	fmt.Println(m)
 	// }
 
 	// { // ## 1 declare
-	// 	// default value: nil
+	// 	// 2declareButUninitialized.go
 	// 	var m map[int]string // not initialized
 	//
 	// 	if m == nil {

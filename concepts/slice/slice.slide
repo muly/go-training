@@ -48,13 +48,13 @@ assigning one slice to another slice of different length. slice has the length a
 ## 4 reinitializing
 reinitializing the slice
 
-.play 4reinitializing/1fromAnotherSlice.go
+.play 04reinitializing/1withAnotherSlice.go
 
 
 ## 4 reinitializing
 reinitializing the slice: with different length
 
-.play 4reinitializing/2fromAnotherSliceOfDifferentLength.go
+.play 4reinitializing/2withAnotherSlice_OfDifferentLength.go
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
