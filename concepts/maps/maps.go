@@ -15,7 +15,8 @@ func main() {
 	// 01declaring/
 
 	// 1declareOnly.go
-	// { 
+	// package main
+	// func main(){ 
 	// 	
 	// 	var m map[int]string
 	//
@@ -149,7 +150,7 @@ func main() {
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ## accessing Individual Element of the map
-	// 5accessingIndividualElement/
+	// 05accessingIndividualElement/
 
 
 	// reading individual element:
@@ -157,16 +158,38 @@ func main() {
 	// 1reading.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
-	// 	fmt.Println(m[1])
+	// 	fmt.Println(m[1]) // hardcoding key
 	//
 	// 	k := 0
-	// 	fmt.Println(m[k])
+	// 	fmt.Println(m[k]) // using a variable as a key
 	// }
+
+
+	// accessing individual element: with existing key with empty value
+	// 2reading_existingKeyWithEmptyValue.go
+	// {
+	// 	var m = map[int]float32{1: 111, 3: 333, 9: 0}
+	//
+	// 	fmt.Println(m[9])
+	// 	fmt.Println(m)
+	// }
+
+
+	// accessing individual element: with non existing key
+	// 3reading_withNonExistingKey.go
+	// {
+	// 	var m = map[int]float32{1: 111, 3: 333}
+	//
+	// 	fmt.Println(m[9]) // no error. returns zero value for the value type, i.e. 0 for float32
+	// 	fmt.Println(m)
+	// }
+
+
 
 
 	// writing individual element
 	// syntax: map_var[key]=new_value
-	// 2writing.go
+	// 4writing.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
@@ -182,7 +205,7 @@ func main() {
 	// overwriting individual element
 	// key_value has to be unique
 	// syntax: map_var[key]=new_value
-	// 3writing_overwriting.go
+	// 5writing_overwriting.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
@@ -190,31 +213,10 @@ func main() {
 	// 	fmt.Println(m[3])
 	//
 	// 	m[1] = "A" // value need not be unique. here key 3, 1 both has the same value "A"
-	//
-	// }
-
-
-	// accessing individual element: with existing key with empty value
-	// 4reading_existingKeyWithEmptyValue.go
-	// {
-	// 	var m = map[int]float32{1: 111, 3: 333, 9: 0}
-	//
-	// 	fmt.Println(m[9])
 	// 	fmt.Println(m)
 	// }
 
-
-	// accessing individual element: with not existing key
-	// 5reading_withNotExistingKey.go
-	// {
-	// 	var m = map[int]float32{1: 111, 3: 333}
-	//
-	// 	fmt.Println(m[9]) // no error. returns zero value for the value type, i.e. 0 for float32
-	// 	fmt.Println(m)
-	// }
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// ## 6 find if the key already exists in the map
+	// find if the key already exists in the map
 	// as we noticed in the previous example, both of the cases (mentioned below) return same value, (ie 0). so how to differenciate between these two cases
 	// - case 1: key exists but with zero value
 	// - case 2: key doesn't exist in the map
@@ -225,7 +227,7 @@ func main() {
 	// 		if exists is true, given key is in the map_variable
 	//  	if exists is false, given key is not in the map_variable
 
-	//
+	// 6keyExistsCheck.go
 	// {
 	// 	var m = map[int]float32{1: 10.5, 3: 30.5, 5: 0.0}
 	//
@@ -237,7 +239,8 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// ## 7 len() system functions
+	// ## 6 len() system functions
+	// 06len/
 	// len() system functions
 	// {
 	// 	var m = map[int]float32{1: 10.5, 3: 30.5, 5: 0.0}
@@ -245,9 +248,13 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// ## 8 for Loop
-	// range returns key and value
-	//
+	// ## 7 for Loop
+	// 07loop/
+	// syntax: key_var, val_var:= range map_var{}
+	// 
+	// range returns key and value; 
+	
+	// 1withKeyValue.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
@@ -256,8 +263,9 @@ func main() {
 	// 	}
 	// }
 
-	// ## 8 for Loop
+
 	// key and value are optional: value only
+	// 2withValueOnly.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
@@ -266,8 +274,8 @@ func main() {
 	// 	}
 	// }
 
-	// ## 8 for Loop
 	// key and value are optional: key only
+	// 3withKeyOnly.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
@@ -276,8 +284,8 @@ func main() {
 	// 	}
 	// }
 
-	// ## 8 for Loop
 	// key and value are optional: key only, without underscore
+	// 4withKeyOnly_withoutUnderscore.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
@@ -286,8 +294,8 @@ func main() {
 	// 	}
 	// }
 
-	// ## 8 for Loop
 	// order of retrieval is not guaranteed
+	// 5orderNotGuaranteed.go
 	// {
 	// 	var m = map[int]int{}
 	// 	for k := 0; k < 10; k++ {
@@ -300,7 +308,10 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// // ## 9 make() system function
+	// // ## 8 make() system function
+	// 08make/
+
+	// 1make.go
 	// {
 	// 	var m map[int]int = make(map[int]int) // functionally identical to initializing with empty map
 	// // same as var m map[int]int = map[int]int{}
@@ -310,7 +321,7 @@ func main() {
 	// 	}
 	// }
 
-	// // ## 9 make() system function
+	// 2make_withLenParam.go
 	// // Note: length parameter of make() has no effect for map type
 	// {
 	// 	var m = make(map[int]int, 10)
@@ -318,9 +329,13 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// // ## 10 delete() system function
+	// // ## 9 delete() system function
+	// 09delete/
 	// // delete one kv pair
 	// // syntax: delete(map_variable, key)
+
+
+	// 1singlePair.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	// 	fmt.Println(m)
@@ -334,8 +349,9 @@ func main() {
 	// 	fmt.Println(m)
 	// }
 
-	// // ## 10 delete() system function
+
 	// // delete all
+	// 2allPairs.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	// 	for k := range m {
@@ -345,10 +361,14 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// // ## 11 map of complex types
+	// // ## 10 map of complex types
+	// 10withComplexTypes/
 	// // value may be of any type, including other maps.
 	// // key may be of any type that are comparable (see https://go.dev/ref/spec#Comparison_operators).
-	// // map of structs
+	
+	
+	// // map of struct
+	// 1mapOfStruct.go
 	// {
 	// 	type personUnique struct {
 	// 		email       string
@@ -382,8 +402,8 @@ func main() {
 	// 	}])
 	// }
 
-	// // ## 11 map of complex types
-	// // map of structs: cleaner example
+	// // map of struct: cleaner example]
+	// 2mapOfStruct_cleanerExample.go
 	// {
 	// // types for keys and values
 	// 	type personUnique struct {
@@ -419,20 +439,11 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// map is pointer type
+	// ## 11 map is pointer type
+	// 11mapIsPointerType/
 	// Note: this is Advanced topic. prerequisites: pointers, functions
 	// If a map isn’t a reference variable, what is it?: https://dave.cheney.net/2017/04/30/if-a-map-isnt-a-reference-variable-what-is-it
 	//
-	// 	{
-	// 		var m = map[int]int{1: 100, 2: 200}
-	// 		fmt.Println(m)
-	// 		insert(m, 3, 300) // note: we are passing the map variable without * (like we do in case of the pointer type),
-	// 		fmt.Println(m) // still, the change made in the insert() function scope is visible outside the insert() function, i.e in main() function.
-	// 		// this behaviour usually happend if we pass the varaible as pointer. but since map is a pointer type, we have the same behavious without using *
-	// 	}
-	//
-	// }
-	//
-	// func insert(m map[int]int, k, v int) {
-	// 	m[k] = v
+	// 1.go	// file already created
+
 }
