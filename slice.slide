@@ -1,86 +1,86 @@
 # Slice
 
 ## 1 declaring a slice
-.play 1declaring/1declaring.go
+.play _concepts/03_slice/01declaring/1declaring.go
 
 ## 1 declaring a slice
 but uninitialized
 
-.play 1declaring/2declaredButUninitialized.go
+.play _concepts/03_slice/01declaring/2declaredButUninitialized.go
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## 2 initializing a slice
 1 declare and initialize in separate lines
 
-.play 2initializing/1declareAndInitialize_inSeparateLines.go
+.play _concepts/03_slice/02initializing/1declareAndInitialize_inSeparateLines.go
 
 ## 2 initializing a slice
 2 initializing: declare and initialize in same line
 
-.play 2initializing/2declareAndInitialize_inSameLine.go
+.play _concepts/03_slice/02initializing/2declareAndInitialize_inSameLine.go
 
 ## 2 initializing a slice
 3 initializing: declare and initialize in same line, inferring datatype
 
-.play 2initializing/3declareAndInitialize_inSameLineInferringDatatype.go
+.play _concepts/03_slice/02initializing/3declareAndInitialize_inSameLineInferringDatatype.go
 
 ## 2 initializing a slice
 4 initializing: short hand form
 
-.play 2initializing/4declareAndInitialize_inSameLineShortHandForm.go
+.play _concepts/03_slice/02initializing/4declareAndInitialize_inSameLineShortHandForm.go
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## 3 assigning
 assigning one slice to another slice
 
-.play 3assigning/1fromAnotherSlice.go
+.play _concepts/03_slice/03assigning/1fromAnotherSlice.go
 
 
 ## 3 assigning
 assigning one slice to another slice of different length. slice has the length as part of the data type'
 
-.play 3assigning/2fromAnotherSliceOfDifferentLength.go
+.play _concepts/03_slice/03assigning/2fromAnotherSliceOfDifferentLength.go
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## 4 reinitializing
 reinitializing the slice
 
-.play 04reinitializing/1withAnotherSlice.go
+.play _concepts/03_slice/04reinitializing/1withAnotherSlice.go
 
 
 ## 4 reinitializing
 reinitializing the slice: with different length
 
-.play 4reinitializing/2withAnotherSlice_OfDifferentLength.go
+.play _concepts/03_slice/04reinitializing/2withAnotherSlice_OfDifferentLength.go
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## 5 accessingIndividualElement
 accessing individual element
 
-.play 5accessingIndividualElement/1reading.go
+.play _concepts/03_slice/05accessingIndividualElement/1reading.go
 
 
 ## 5 accessingIndividualElement
 changing individual element
 
-.play 5accessingIndividualElement/2writing.go
+.play _concepts/03_slice/05accessingIndividualElement/2writing.go
 
 
 ## 5 accessingIndividualElement
 accessing individual element: outside the boundary
 
-.play 5accessingIndividualElement/3readingOutsideBoundary.go
+.play _concepts/03_slice/05accessingIndividualElement/3readingOutsideBoundary.go
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## 6 len() system functions
 len() system functions
 
-.play 6len/1len.go
+.play _concepts/03_slice/06len/1len.go
 
 
 
@@ -89,69 +89,69 @@ len() system functions
 ## 7 for Loop
 for loop: length is hard coded
 
-.play 7forLoop/1manualCounter_lengthHardcoded.go
+.play _concepts/03_slice/07forLoop/1manualCounter_lengthHardcoded.go
 
 ## 7 for Loop
 for loop: using len()
 
-.play 7forLoop/2manualCounter_usingLenFunction.go
+.play _concepts/03_slice/07forLoop/2manualCounter_usingLenFunction.go
 
 ## 7 for Loop
 range: intro
 
-.play 7forLoop/3range_withIndexAndValue.go
+.play _concepts/03_slice/07forLoop/3range_withIndexAndValue.go
 
 ## 7 for Loop
 range: ignoring the index
 
-.play 7forLoop/4range_withIndexIgnored.go
+.play _concepts/03_slice/07forLoop/4range_withIndexIgnored.go
 
 ## 7 for Loop
 range: ignoring the value
 
-.play 7forLoop/5range_withValueIgnored.go
+.play _concepts/03_slice/07forLoop/5range_withValueIgnored.go
 
 ## 7 for Loop
 range: ignoring the value; simplified form
 
-.play 7forLoop/6range_withValueIgnoredInSimpleForm.go
+.play _concepts/03_slice/07forLoop/6range_withValueIgnoredInSimpleForm.go
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## cap() system function
 capacity of a slice: intro
 
-.play 8cap/1capIntro.go
+.play _concepts/03_slice/08cap/1capIntro.go
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ## append() system function
 syntax
 
-.play 9append/0syntax.go
+.play _concepts/03_slice/09append/0syntax.go
 
 ## append: a single element
 appending a single element
 
-.play 9append/1singleElement.go
+.play _concepts/03_slice/09append/1singleElement.go
 
 ## append: multiple elements
 appending multiple elements
 
-.play 9append/2multipleElement.go
+.play _concepts/03_slice/09append/2multipleElement.go
 
 ## append: using another slice contents
 appending h=the contents of another slice ( using ... expansion notation)
 
-.play 9append/3usingAnotherSlice.go
+.play _concepts/03_slice/09append/3usingAnotherSlice.go
 
 ## append: skipping assignment
 not allowed
 
-.play 9append/4skippingAssignment.go
+.play _concepts/03_slice/09append/4skippingAssignment.go
 
 ## append: growing beyond the capacity of the slice:
-what happens if we try to grow beyong the capacity of the slice.
+what happens if we try to grow beyond the capacity of the slice.
 
 we will revisit this after the concept of underlying array, and capacity topics are covered
 	
@@ -162,33 +162,33 @@ we will revisit this after the concept of underlying array, and capacity topics 
 ## make() system function
 syntax 
 
-.play 10make/0syntax.go
+.play _concepts/03_slice/10make/0syntax.go
 
 ## make()
 with length and capacity
 
-.play 10make/1withLenCap.go
+.play _concepts/03_slice/10make/1withLenCap.go
 
 ## make()
 with capacity only
 
-.play 10make/2withCapOnly.go
+.play _concepts/03_slice/10make/2withCapOnly.go
 
 ## make()
 with length only
 capacity will be defaulted to the length
 
-.play 10make/3withLenOnly.go
+.play _concepts/03_slice/10make/3withLenOnly.go
 
 ## make() and append()
 make with 0 length
 
-.play 10make/4makeAndAppendWith0Len.go
+.play _concepts/03_slice/10make/4makeAndAppendWith0Len.go
 
 ## make() and append()
 make with non zero length
 
-.play 10make/5makeAndAppendWithNonZeroLen.go
+.play _concepts/03_slice/10make/5makeAndAppendWithNonZeroLen.go
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -201,27 +201,27 @@ syntax
 ## slicing
 slicing an array: - using both a low and high bounds
 
-.play 12slicing/1arrayUsingLowAndHighBound.go 
+.play _concepts/03_slice/12slicing/1arrayUsingLowAndHighBound.go 
     
 ## slicing
 slicing an array: - using a low bound only
 
-.play 12slicing/2arrayUsingLowBoundOnly.go
+.play _concepts/03_slice/12slicing/2arrayUsingLowBoundOnly.go
 
 ## slicing
 slicing an array: - using a high bound only
 
-.play 12slicing/3arrayUsingHighBoundOnly.go
+.play _concepts/03_slice/12slicing/3arrayUsingHighBoundOnly.go
     
 ## slicing
 slicing an array: - using no bounds
 
-.play 12slicing/4arrayUsingNoBound.go
+.play _concepts/03_slice/12slicing/4arrayUsingNoBound.go
     
 ## slicing
 slicing a slice:
 
-.play 12slicing/5slicingASlice.go
+.play _concepts/03_slice/12slicing/5slicingASlice.go
     
 
 
@@ -231,15 +231,15 @@ slicing a slice:
 slicing a array
 to demonstrate that lets slice an array and see the metadata for the created slice
 
-.play 13sliceIsAPointer/1addressOfFirstElementOfSliceIsAddressOfArray.go
+.play _concepts/03_slice/13sliceIsAPointer/1addressOfFirstElementOfSliceIsAddressOfArray.go
 
 ## slice is a pointer to underlying array: changes to the slice are reflected in the underlying array
 to demonstrate that lets slice an array
 
-.play 13sliceIsAPointer/2sliceChangesWillReflectOnArray.go
+.play _concepts/03_slice/13sliceIsAPointer/2sliceChangesWillReflectOnArray.go
 
 
 ## slice is a pointer to underlying array: creating a slice directly
 lets create slice without explicitly creating an array
 
-.play 13sliceIsAPointer/3evenWhenSliceCreatedDirectly.go
+.play _concepts/03_slice/13sliceIsAPointer/3evenWhenSliceCreatedDirectly.go
