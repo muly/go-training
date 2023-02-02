@@ -1,0 +1,143 @@
+# API
+Application Programming Interface
+
+
+
+## what is API
+API stands for application programming interface, which is a set of definitions and protocols for building and integrating application software.
+
+_source: https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces_
+
+
+## client server architecture
+
+## client server architecture
+**basic client server architecture**
+
+.image _concepts/20_api/Client-server-model.png _ 400
+_source: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1200px-Client-server-model.svg.png_
+
+
+## client server architecture
+**request - response model**
+
+.image _concepts/20_api/client-server-request-response.png _ 400
+_source: https://darvishdarab.github.io/cs421_f20/assets/images/client-server-1-d85a93ea16590c10bed340dd78294d0d.png_
+
+: more TODO: to add
+: 1. https://intellipaat.com/blog/wp-content/uploads/2021/09/image-99.png
+: 2. https://darvishdarab.github.io/cs421_f20/docs/readings/client_server/
+
+
+## client server architecture
+
+.video _concepts/20_api/request-flow/restful_api_request_flow.mov video/mov 500 _
+
+## RESTful API standard
+
+## RESTful API standard
+**intro**
+
+Representational state transfer (REST) is a software architectural style that describes the architecture of the Web.
+
+_source: https://en.m.wikipedia.org/wiki/Representational_state_transfer_
+
+
+## RESTful API standard
+**anatomy of API request and response**
+
+TODO: need to find a diagram or make one
+
+: show these parts using postman
+
+
+
+## RESTful API standard
+**request anatomy**
+- url/uri
+- method
+- request body
+- headers
+
+
+## RESTful API standard
+**request: method**
+
+indicates the type of the request operation: CRUD (Create Read Update Delete) operations and more
+- POST: creating a new resource
+- GET: get details of an existing resource
+- PUT: updating an existing resource
+- PATCH: updating an existing resource
+- DELETE: deleting an existing resource
+- and more uncommon methods
+    
+## RESTful API standard
+**request: path**
+
+path includes uri (universal resource identifier)
+
+example: in www.example.com/student/123 the "student/123" identifies the resource and is called the URI (in general)
+
+## RESTful API standard
+**request: body**
+
+data associated with the request 
+
+example (json): 
+
+    {"name":"rohit","addr":"","marks":300}
+
+## RESTful API standard
+**request: headers** 
+
+metadata in key value format.
+
+example: 
+
+    Content-type: application/json
+
+- there are many common headers (like above), 
+- the server and client can define their own headers, as long as they both understand the purpose of it.
+
+## RESTful API standard
+**response anatomy**
+- 
+
+## RESTful API standard
+**response: status code**
+
+numerical code indicating the status of the request process
+- 2xx: success
+- 4xx: client side error
+- 5xx: server side error
+
+.link https://developer.mozilla.org/en-US/docs/Web/HTTP/Status and more 
+
+## RESTful API standard
+**response: response body**
+
+response data sent to the client by the server
+
+## RESTful API standard
+**response: headers**
+
+metadata in key value format
+
+example: 
+
+    Content-type: application/json
+
+
+## RESTful API standard
+**further read**
+
+.link https://blog.uptrends.com/technology/the-anatomy-of-an-api-call/ The anatomy of an API call
+.link https://www.geeksforgeeks.org/rest-api-introduction/  
+.link https://www.youtube.com/watch?v=7YcW25PHnAA Video: REST API concepts and examples
+.link https://www.youtube.com/watch?v=lsMQRaeKNDk Video: What is a REST API?
+
+
+## api server programming using net/http package
+## api server programming using gorilla mux package
+## api server programming using other 3rd party packages
+## api client programming using net/http package
