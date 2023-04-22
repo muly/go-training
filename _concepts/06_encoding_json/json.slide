@@ -1,0 +1,31 @@
+
+## JSON
+
+
+## Marshal, Unmarshal
+Marshal
+01marshal.go
+
+
+## Marshal, Unmarshal
+Unmarshal
+02unmarshal.go
+
+
+## Encode, Decode
+Encode into a file
+03encodeFile.go
+
+
+## Encode, Decode
+Encode can also be done into string
+03encodeString.go
+
+## Encode, Decode
+Decode from a file
+03decodeFile.go
+
+
+## Encode, Decode
+Decode can also be done from string
+03decodeString.go

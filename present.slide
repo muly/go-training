@@ -1,0 +1,30 @@
+
+
+# Present tool 
+
+## step 0: prepare the project folder
+
+go mod init .
+
+go get golang.org/x/tools
+
+
+
+
+## step 1: install present tool
+ref: https://pkg.go.dev/golang.org/x/tools/present
+
+install:
+go mod download ...
+
+go mod tidy
+
+go get golang.org/x/tools
+
+## step 2: create .slide file
+markdown language to describe the slides
+
+https://pkg.go.dev/golang.org/x/tools/present#hdr-Markdown_Syntax
+
+## step 3: run present tool
+
