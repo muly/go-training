@@ -4,9 +4,9 @@
 
 ## step 0: prepare the project folder
 
-go mod init .
+    go mod init .
 
-go get golang.org/x/tools
+    go get golang.org/x/tools
 
 
 
@@ -15,11 +15,12 @@ go get golang.org/x/tools
 ref: https://pkg.go.dev/golang.org/x/tools/present
 
 install:
-go mod download ...
 
-go mod tidy
+    go mod download ...
 
-go get golang.org/x/tools
+    go mod tidy
+
+    go get golang.org/x/tools
 
 ## step 2: create .slide file
 markdown language to describe the slides
@@ -27,4 +28,11 @@ markdown language to describe the slides
 https://pkg.go.dev/golang.org/x/tools/present#hdr-Markdown_Syntax
 
 ## step 3: run present tool
+
+
+
+
+    $ present
+
+    2023/04/22 17:31:05 Open your web browser and visit http://127.0.0.1:3999
 
