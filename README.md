@@ -19,3 +19,20 @@
 https://go-talks.appspot.com/github.com/muly/go-training/slice.slide [server error]
 
 working example: https://go-talks.appspot.com/github.com/davecheney/presentations/reproducible-builds.slide#1
+
+not working example: 403 error from github api
+https://go-talks.appspot.com/github.com/muly/go-training/slice.slide#1
+    Error accessing api.github.com.
+        403: (https://api.github.com/repos/muly/go-training)
+    Error accessing api.github.com.
+        get https://api.github.com/repos/muly/go-training/contents/_concepts/03_slice/07forLoop/6range_withValueIgnoredInSimpleForm.go -> 403
+
+
+sometimes not working:
+https://go-talks.appspot.com/github.com/davecheney/presentations/5nines.slide#26
+    similar 403 error
+
+open issue related to this:
+    https://github.com/golang/go/issues/58906
+
+
