@@ -2,8 +2,16 @@
 
 # Present tool 
 
-## step 0: prepare the project folder
+## step 0: install present tool
+ref: https://pkg.go.dev/golang.org/x/tools/present
 
+install:
+
+    go install golang.org/x/tools/cmd/present
+: this will install present tool in go bin ($GOPATH/bin) directory
+
+## step 1: prepare the presentation project folder
+: the presentation project should have go modules enabled and x/tools dependency is added.
     go mod init .
 
     go get golang.org/x/tools
@@ -11,16 +19,6 @@
 
 
 
-## step 1: install present tool
-ref: https://pkg.go.dev/golang.org/x/tools/present
-
-install:
-
-    go mod download ...
-
-    go mod tidy
-
-    go get golang.org/x/tools
 
 ## step 2: create .slide file
 markdown language to describe the slides
@@ -28,11 +26,13 @@ markdown language to describe the slides
 https://pkg.go.dev/golang.org/x/tools/present#hdr-Markdown_Syntax
 
 ## step 3: run present tool
-
-
-
-
+: run the present command to start the presentation locally
     $ present
 
     2023/04/22 17:31:05 Open your web browser and visit http://127.0.0.1:3999
 
+## step 3: run present tool with presenter notes 
+    $ present -notes
+    
+    2023/04/23 00:27:11 Open your web browser and visit http://127.0.0.1:3999
+    2023/04/23 00:27:11 Notes are enabled, press 'N' from the browser to display them.
