@@ -1,6 +1,22 @@
 # Variables
 
 ## 1 declaring variables 
-.play _concepts/01_introduction/01a_declaring.go 
+.play _concepts/01_introduction/01variables/01a_declaring.go
+
+## 1 declaring variables 
+
+.play _concepts/01_introduction/01variables/01b_declaring.go
+
+## 1 declaring variables
+at different scopes 
+ 
+: variables 
+
+.play _concepts/01_introduction/01variables/01c_differentscope.go
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#default values 
+
+## 2 default values of each variable 
+.play _concepts/01_introduction/01variables/01d_default.go 
