@@ -20,3 +20,10 @@ at different scopes
 
 ## 2 default values of each variable 
 .play _concepts/01_introduction/01variables/01d_default.go 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#operations
+
+## 3 arithmetic operations for two numbers
+.play _concepts/01_introduction/02operations/02a_arithmetic.go
