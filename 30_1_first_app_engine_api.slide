@@ -1,0 +1,74 @@
+# GCP App Engine 
+
+Deploying a simple Go API to GCP App Engine 
+
+
+
+## references
+used below tutorial but added additional steps
+reference: https://cloud.google.com/appengine/docs/standard/go/building-app#before-you-begin
+: TODO: enable hyperlink
+
+
+## stage 1: on the GCP side: 
+this is one time setup for the project
+
+
+## on the GCP side: 
+step 1: GCP Account
+
+
+1. sign up if you don't already have a GCP account
+2. sign in https://console.cloud.google.com/
+: TODO: enable hyperlink
+
+
+## on the GCP side: 
+step 2: Create/Select a GCP Project
+
+1. Create it, if not already created, 
+2. select the project: 
+https://console.cloud.google.com/projectselector2/home/dashboard
+: TODO: enable hyperlink
+
+## on the GCP side:
+step 3: Enable Billing
+
+instructions: https://cloud.google.com/billing/docs/how-to/verify-billing-enabled
+: TODO: enable hyperlink
+
+## on the GCP side: 
+step 4: Enable the Cloud Build API.
+1. Confirm Project
+2. Enable API
+
+https://console.cloud.google.com/flows/enableapi?apiid=cloudbuild.googleapis.com
+: TODO: enable hyperlink
+
+: TODO: add image link: _concepts/30_gcp/gcp_enable_cloud_build_api.png
+
+## on the GCP side:
+step 5: install gcloud cli
+
+https://cloud.google.com/sdk/docs/install
+: TODO: enable hyperlink
+
+verify installation:
+
+`which gcloud`
+: TODO: format above command as code
+
+## on the GCP side: 
+step 6: initialize gcloud cli
+
+`gcloud init`
+: TODO: format above command as code
+
+
+## on the GCP side: 
+step 7: setup app engine for the selected gcp project
+
+`gcloud app create`
+: TODO: format above command as code
+
+
