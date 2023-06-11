@@ -72,3 +72,43 @@ step 7: setup app engine for the selected gcp project
 : TODO: format above command as code
 
 
+## on the GCP side: 
+if necessary pick the right gco project:
+
+`gcloud config set project <project-id>`
+
+## go code
+step 1. structuring the code
+create below files
+1. app.yaml
+2. main.go
+
+
+## go code
+2. app.yaml 
+create app.yaml file 
+
+## go code
+3. main.go
+see main.go file
+
+## go code
+4. mod
+`go mod init`
+make sure the go version in go.mod is compatible with the go version app.yml
+
+## go code
+5. test locally
+go run main.go
+
+on browser http://localhost:8080/
+should display `Hello, World!`
+
+## deployment
+1. deploy
+gcloud app deploy
+
+## deployment
+2. verify deployment
+gcloud app browse
+or on browser go to https://PROJECT_ID.REGION_ID.r.appspot.com (replace PROJECT_ID and REGION_ID with appropriate values)

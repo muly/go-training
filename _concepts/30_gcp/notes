@@ -14,36 +14,9 @@ on the gcp side: one time setup for the project
 go code
 ////////////////////////////
 
-1. structuring the code
-./app.yaml
-
-
-
-2. app.yaml 
-create app.yaml file 
-
-3. main.go
-see main.go file
-
-4. mod
-`go mod vendor`
-make sure the go version in go.mod is compatible with the go version app.yml
-
-5. test locally
-go run main.go
-
-on browser http://localhost:8080/
-should display `Hello, World!`
-
 
 
 ////////////////////////////
 deployment
 ////////////////////////////
 
-1. deploy
-gcloud app deploy
-
-2. verify deployment
-gcloud app browse
-or on browser go to https://PROJECT_ID.REGION_ID.r.appspot.com (replace PROJECT_ID and REGION_ID with appropriate values)
