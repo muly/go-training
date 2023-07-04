@@ -24,22 +24,28 @@
 ## declaring variables
 **different types of declaration**
 
-.play _concepts/01_introduction/01variables/1variable1-different-type-declaration.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/01_introduction/01variables/1variable1-different-type-declaration.go /START OMIT/,/END OMIT/
 
 ## declaring variables 
-**package level declaration** 
+**declaring multiple variables** 
 
-.play _concepts/01_introduction/01variables/1variable2-multiple-vars.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/01_introduction/01variables/1variable2-multiple-vars1.go /START OMIT/,/END OMIT/
+
+
+## declaring variables 
+**initializing multiple variables** 
+
+.play -numbers _concepts/01_introduction/01variables/1variable2-multiple-vars2.go /START OMIT/,/END OMIT/
 
 
 ## variables scope
-.play _concepts/01_introduction/01variables/1variable3-scope.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/01_introduction/01variables/1variable3-scope.go /START OMIT/,/END OMIT/
 
 ## package level variables
-.play _concepts/01_introduction/01variables/1variable4-package-level.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/01_introduction/01variables/1variable4-package-level.go /START OMIT/,/END OMIT/
 
 ## default values
-.play _concepts/01_introduction/01variables/1variable5-default-values.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/01_introduction/01variables/1variable5-default-values.go /START OMIT/,/END OMIT/
 
 ## variable shadowing 
-.play _concepts/01_introduction/01variables/1variable6-variable-shadowing.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/01_introduction/01variables/1variable6-variable-shadowing.go /START OMIT/,/END OMIT/

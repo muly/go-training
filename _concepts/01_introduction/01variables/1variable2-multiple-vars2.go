@@ -4,18 +4,18 @@ import "fmt"
 
 // START OMIT
 func main() {
-	var x int
-	var y int
-	x = 10
-	y = 12
 	// declaring multiple variables together
 	var a, b int
 	a = 10
 	b = 12
+	
 	// initializing multiple variables together
 	a, b = 10, 12
+	fmt.Println(a, b)
 
-	fmt.Println(x, y, a, b)
+	// swap
+	a, b = b, a 
+	fmt.Println(a, b)
 }
 
 // END OMIT
