@@ -1,8 +1,8 @@
-// variable shadowing
 package main
 
 import "fmt"
 
+// START OMIT
 func main() {
 	var x = 99 // function level scope
 	{
@@ -12,3 +12,5 @@ func main() {
 
 	fmt.Println("in main block", x) // has value declare at function level
 }
+
+// END OMIT

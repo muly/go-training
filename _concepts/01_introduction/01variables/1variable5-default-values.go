@@ -1,8 +1,8 @@
-// default values
 package main
 
 import "fmt"
 
+// START OMIT
 func main() {
 	var i int
 	var s string
@@ -16,5 +16,6 @@ func main() {
 	fmt.Printf("default value of bool is: %v\n", b) // false
 
 	fmt.Printf("default value of bool is: %v\n", f) // float 0.0
-
 }
+
+// END OMIT

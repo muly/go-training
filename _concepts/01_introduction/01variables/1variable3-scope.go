@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// START OMIT
 var p = 100 // package level scope
 
 func main() {
@@ -22,3 +23,5 @@ func main() {
 
 	fmt.Println("in main function:", p, f) // b is not visible here too
 }
+
+// END OMIT
