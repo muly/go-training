@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
+// START OMIT
 func main() {
-	// START OMIT
 	// 1. declare & initialize in separate lines
 	var name string
 	name = "go class"
@@ -18,5 +18,6 @@ func main() {
 	yetAnotherClass := "go class"
 
 	fmt.Println(name, class, anotherClass, yetAnotherClass)
-	// END OMIT
 }
+
+// END OMIT

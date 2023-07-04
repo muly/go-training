@@ -2,8 +2,10 @@ package main
 
 import "fmt"
 
+// START OMIT
 // declare at package level and initialize later
 var name string
+
 // name = "go class" // NOT allowed: lines should start with Go keywords only
 
 // declare at package level and initialize here
@@ -24,3 +26,5 @@ func main() {
 
 	fmt.Println("hello")
 }
+
+// END OMIT
