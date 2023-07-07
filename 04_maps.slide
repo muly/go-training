@@ -1,0 +1,239 @@
+# maps
+
+////////////////////////////////////////////////////////////////////////////////////
+## what is map?
+
+
+https://go.dev/blog/maps
+
+////////////////////////////////////////////////////////////////////////////////////
+## declaring a map
+// slide 1
+
+    map[KeyType]ValueType
+        KeyType: any type that is comparable
+        ValueType: any type at all, including another map!
+
+    example: 
+	    var m map[int]string
+
+// slide 2
+**using make**
+// TODO: need to add code and make syntax. Question: is make used to declare a map or initialize a map?
+
+////////////////////////////////////////////////////////////////////////////////////	
+## initialize map
+**initialize multiple key value pairs**
+
+    var m map[int]string
+    m= map[int]string{
+        1:"one",
+        2:"two",
+    }
+
+## initialize map
+**initialize individual key value pairs**
+
+    var m map[int]string 
+    m= map[int]string{}
+    m[1]="one"
+    m[2]="two"
+    m[1]="ONE" // re-initialize
+
+////////////////////////////////////////////////////////////////////////////////////
+## retrieving a key value pairs
+
+	var m map[int]string
+	m = map[int]string{
+		1: "one",
+		2: "two",
+	}
+
+	fmt.Println(m[1])
+
+	// key as a variable
+	k := 2
+	fmt.Println(m[k])
+
+////////////////////////////////////////////////////////////////////////////////////
+## un-initialized map
+**default value**
+
+- map is a reference type
+- default value is nil
+
+
+    var m map[int]string
+    if m == nil {
+        fmt.Println("map in nil")
+    }
+
+
+## un-initialized map
+**writing into un-initialized map**
+
+: because the map is reference type and default value of un-initialized map is nil, writing to un-initialized map will result in panic 
+
+	var m map[int]string
+	if m == nil {
+		fmt.Println("map in nil")
+	}
+    m[1]="one" // results in panic
+
+solution: initialize the map using empty map or using make()
+
+////////////////////////////////////////////////////////////////////////////////////
+## map is reference type
+
+// TODO: need to review the code and refine it if necessary
+	m1 := make(map[string]int)
+	m2 := make(map[string]int)
+
+	m1["student1"] = 120
+	m2 = m1
+
+	m2["student1"] = 90
+	fmt.Println(m1, m2)
+: the values of both maps is same, even though we modified only one of them.
+
+// TODO: example (in later slides for function) of map as parameter to function and value changes visible outside the function body 
+
+
+////////////////////////////////////////////////////////////////////////////////////
+## iterate over map
+: unlike a slice and array, we cannot use the for loop with index counter as the key for the map can be more than an number and need not be sequential 
+syntax:
+    for KeyVariable, ValueVariable := range MapVariable{}
+: range on a map returns key and value corresponding to that key in each iteration
+: Note: comparing it with a slice, range on slice returns index and value.
+
+
+
+    var m map[int]string
+    m = map[int]string{0: "A", 9: "B"}
+    fmt.Println(m)
+
+
+    for k, v := range m { // initializing key and value
+        fmt.Println(k, v)
+    }
+
+    for _, v := range m { // initializing value, ignoring key
+        fmt.Println(v)
+    }
+
+    for k, _ := range m {// initializing key, ignoring value
+        fmt.Println(k)
+    }
+    for k := range m { // since second var is ignored, we can skip underscore
+        fmt.Println(k)
+    }
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+## check if key exists
+// slide 1
+map retrieval results in a zero value when the key is not present.\
+
+	var m = map[int]float32{}
+	m[1] = 0
+
+	fmt.Println(m[1]) // retrieving an existing key with zero value
+
+	fmt.Println(m[10]) // retrieving a non existing key
+
+Question: how to know if the result is because \
+    - the key is present in the map with zero value\
+    - or the key is not present at all?\
+
+
+
+// slide 2
+**two-value assignment**
+: retrieving an existing key returns
+    var m = map[int]float32{}
+    m[1] = 0
+
+    v1, ok := m[1] // retrieving an existing key with zero value
+    fmt.Println(v1, ok)
+
+// slice 3
+: retrieving an non existing key also return zero value, but returns false for second return value 
+
+    var m = map[int]float32{}
+    m[1] = 0
+
+    v1, ok := m[1] // retrieving an existing key with zero value
+    fmt.Println(v1, ok)
+
+    v10, ok := m[10] // retrieving a non existing key
+    fmt.Println(v10, ok)
+
+////////////////////////////////////////////////////////////////////////////////////
+## len()
+**returns the number of key value pairs in the map**
+// slide 1
+syntax: len(MapVariable)\
+returns: int
+
+**example:** 
+	var m = map[int]string{1: "one", 2: "two"}
+	fmt.Println(len(m))
+
+// slide 2
+**returns 0 for a nil map**
+	var m map[int]string
+	if m == nil {
+		fmt.Println("map in nil")
+	}
+	fmt.Println(len(m))
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+## delete()
+**delete a key value pair**
+// slide 1
+
+syntax: delete(MapVariable, KeyValue)
+
+example: 
+	var m = map[int]float32{1: 1.1, 2: 2.2}
+
+	delete(m, 1)
+
+// slide 2
+: retrieving by deleted key returns zero value. how do we know for sure that the key value pair is deleted vs re-initialized to zero value?
+
+	var m = map[int]float32{1: 1.1, 2: 2.2}
+	fmt.Println(m[1])
+
+	delete(m, 1)
+	fmt.Println(m[1])
+
+	m[2] = 0
+	fmt.Println(m[2])
+
+// slide 3
+: len() returns one less value after delete
+
+	var m = map[int]float32{1: 1.1, 2: 2.2}
+	fmt.Println(len(m))
+
+	delete(m, 1)
+	fmt.Println(len(m))
+
+// slide 4
+: the OK bool value will be false for the deleted key
+
+	var m = map[int]float32{10: 0.0}
+
+	v, ok := m[10]
+	fmt.Println(v, ok) 
+
+	delete(m, 10)
+	v, ok = m[10]
+	fmt.Println(v, ok) 
+
