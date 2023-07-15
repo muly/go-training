@@ -1,0 +1,32 @@
+# Operators
+
+## Operators
+- arithmetic operators
+- relational operators
+- logical operators
+
+## arithmetic operators
+
+.play -numbers _concepts/01_introduction/03operations/03a_arithmetic.go /START OMIT/,/END OMIT/
+
+
+
+## relational operators
+.play -numbers _concepts/01_introduction/03operations/03b_relational.go /START OMIT/,/END OMIT/
+
+
+## logical operators
+
+- logical and operator: && 
+- logical or operator: || 
+- logical not operator: !  
+
+**Truth Table**
+
+	            AND     OR
+ 	FALSE FALSE FALSE	FALSE
+ 	FALSE TRUE 	FALSE	TRUE
+ 	TRUE FALSE 	FALSE	TRUE
+ 	TRUE TRUE 	TRUE	TRUE
+
+.play -numbers _concepts/01_introduction/03operations/03c_logical.go /START OMIT/,/END OMIT/
