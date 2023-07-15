@@ -1,9 +1,55 @@
 # Constants
 
+## constants
+- cannot be changed
+- created at compile time
+- can only be numbers, characters (runes), strings or booleans
+- can be initialized with a literal or a expression
+- if expression is used to initialize, it must be constant expressions, evaluatable by the compiler
+
 ## declaring constants
-// https://youtu.be/Z6MobWusCRA?t=186
+**syntax:**
+
+    const constantName datatype = value
+
+.play -numbers _concepts/01_introduction/02constants/1-different-type-declaration.go /START OMIT/,/END OMIT/
+
+## declaring constants
+**multiple constants in same line**
+
+.play -numbers _concepts/01_introduction/02constants/2-multiple-consts1.go /START OMIT/,/END OMIT/
+
+: Note: this way of coding doesn't work for constants of different data types
+
+## declaring constants
+**multiple constants in group**
+
+.play -numbers _concepts/01_introduction/02constants/2-multiple-consts2.go /START OMIT/,/END OMIT/
+
+
+## enum
+**manual enumeration**
+
+.play -numbers _concepts/01_introduction/02constants/3-enum1.go /START OMIT/,/END OMIT/
+
+## enum
+**iota enumerator**\
+starts at 0 by default
+
+.play -numbers _concepts/01_introduction/02constants/3-enum2.go /START OMIT/,/END OMIT/
+
+## enum
+**iota enumerator**\
+to start at a different number
+
+.play -numbers _concepts/01_introduction/02constants/3-enum3.go /START OMIT/,/END OMIT/
+
+## enum
+**iota enumerator**\
+to skip a part of the sequence 
+
+.play -numbers _concepts/01_introduction/02constants/3-enum4.go /START OMIT/,/END OMIT/
 
 ## constants at package level
-// https://youtu.be/Z6MobWusCRA?t=272
 
-## enum 
+.play -numbers _concepts/01_introduction/02constants/4-package-level.go /START OMIT/,/END OMIT/

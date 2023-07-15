@@ -31,11 +31,18 @@
 
 .play -numbers _concepts/01_introduction/01variables/1variable2-multiple-vars1.go /START OMIT/,/END OMIT/
 
+: Note: this way of coding doesn't work for constants of different data types
 
 ## declaring variables 
 **initializing multiple variables** 
 
 .play -numbers _concepts/01_introduction/01variables/1variable2-multiple-vars2.go /START OMIT/,/END OMIT/
+
+
+## declaring variables 
+**declaring multiple variables in group** 
+
+.play -numbers _concepts/01_introduction/01variables/1variable2-multiple-vars3.go /START OMIT/,/END OMIT/
 
 
 ## variables scope
