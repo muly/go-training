@@ -77,6 +77,8 @@ example:
 
 	var m map[int]string
 	// m = map[int]string{1: "one"}
+	// m = map[int]string{}
+	// m = make(map[int]string)
 
 	if m == nil {
 		fmt.Println("map is nil")
