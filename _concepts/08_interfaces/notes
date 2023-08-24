@@ -1,0 +1,33 @@
+
+
+interface
+    abstraction: a car can drive, play music. we dont give the deails of how a can can drive and how it can play music. 
+    we describe "what" but not how. it is up to the implementation on the details of how
+
+    real life examples:
+        usb type c port
+    
+
+  
+    
+
+implementing an interface
+
+interface values
+
+empty interface
+
+
+type assertions
+
+
+
+type switch
+
+
+
+single method interfaces
+    significance
+    example in standard library
+        stringer
+        error

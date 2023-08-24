@@ -12,22 +12,22 @@ https://go.dev/blog/maps
 // slide 1
 **syntax:** 
 
-    map[KeyType]ValueType
-        KeyType: any type that is comparable (not slice, map, function)
-        ValueType: any type at all, including another map!
+			map[KeyType]ValueType
+ 
+- KeyType: any type that is comparable (not slice, map, function)
+- ValueType: any type at all, including another map!
 
-    example: 
-	    var m map[int]string
+- key is unique
+
+
 
 // slide 2
-**using make**
-// TODO: need to add code and make syntax. Question: is make used to declare a map or initialize a map?
+## declaring a map
+**map of integer to string**
 
-	var mapVar map[KeyType]ValueType = make(map[KeyType]ValueType)
+	var m map[int]string
 
-	var mapVar = make(map[KeyType]ValueType)
 
-	mapVar := make(map[KeyType]ValueType)
 
 ////////////////////////////////////////////////////////////////////////////////////	
 ## initialize map
@@ -43,12 +43,22 @@ https://go.dev/blog/maps
 **initialize individual key value pairs**
 
     var m map[int]string 
-    m= map[int]string{}
+    m= map[int]string{}  // empty initialization 
     m[1]="one"
     m[2]="two"
 
     m[3]="three" // re-initialize
     m[1]="ONE" // update existing key with new value
+
+## initialize map
+**using make**
+// TODO: need to add code and make syntax. Question: is make used to declare a map or initialize a map?
+
+	var mapVar map[KeyType]ValueType = make(map[KeyType]ValueType)
+
+	var mapVar = make(map[KeyType]ValueType)
+
+	mapVar := make(map[KeyType]ValueType)
 
 ////////////////////////////////////////////////////////////////////////////////////
 ## retrieving a key value pairs
@@ -152,6 +162,7 @@ syntax:
     for KeyVariable, ValueVariable := range MapVariable{}
 : range on a map returns key and value corresponding to that key in each iteration
 : Note: comparing it with a slice, range on slice returns index and value.
+: Note: the order in which the key value pairs are retrieved is not guaranteed to be the insertion order
 
 example: 
 
