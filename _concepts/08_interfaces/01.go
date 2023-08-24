@@ -2,50 +2,77 @@ package main
 
 import "fmt"
 
-type car interface {
-	drive()
-	playMusic()
+type shape interface {
+	area() float32
+	perimeter() float32
 }
 
-type teslamodel3 struct {
-	// specs of car
-}
-func (c teslamodel3) drive() {
-	// tesla model 3 implementation of drive
-}
-func (c teslamodel3) playMusic() {
-	// tesla model 3 implementation of play music
+type square struct {
+	length float32
 }
 
-type hondaAccord struct {
-	// specs of car
+func (s square) area() float32 {
+	return s.length * s.length
 }
-func (c hondaAccord) drive() {
-	// honda Accord implementation of drive
-}
-func (c hondaAccord) playMusic() {
-	// honda Accord implementation of play music
+func (s square) perimeter() float32 {
+	return s.length * 4
 }
 
-type incompleteCar struct{}
-func (c incompleteCar) drive() {
-	// honda Accord implementation of drive
+type rectangle struct {
+	length float32
+	width  float32
+	color  string
+}
+
+func (s rectangle) area() float32 {
+	return s.length * s.width
+}
+func (s rectangle) perimeter() float32 {
+	return (s.length + s.width) * 2
+}
+func (s rectangle) getColor() string {
+	return s.color
+}
+
+type sphere struct {
+	radius float32
+}
+
+func (s sphere) area() float32 {
+	return 12345
+}
+func (s sphere) volume() float32 {
+	return 34567
+}
+
+type line struct {
+	length float32
+}
+
+func (l line) len() float32 {
+	return l.length
 }
 
 func main() {
+	var sh shape
 
-	var c car
+	sh = square{ // square implements shape interface, because square has the area and perimeter methods implemented with the same signature.
+		length: 10,
+	}
+	fmt.Println(sh.area())
+	fmt.Println(sh.perimeter())
 
-	t := teslamodel3{}
-	h := hondaAccord{}
-	i := incompleteCar{}
+	sh = rectangle{
+		length: 10,
+		width:  5,
+		color:  "green",
+	}
 
-	c = t
+	fmt.Println(sh.area())
+	fmt.Println(sh.perimeter())
 
-	c = h
+	// sh = line{length: 10} // ERROR: line does not implement shape (missing method area)
 
-	c = i // ERROR: cannot use i (variable of type incompleteCar) as car value in assignment: incompleteCar does not implement car (missing method playMusic)
-
-	fmt.Println(c)
+	// sh = sphere{radius: 100} // ERROR: sphere does not implement shape (missing method perimeter)
 
 }

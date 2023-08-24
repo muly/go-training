@@ -1,0 +1,39 @@
+# interface
+
+////////////////////////////////////////////////////////////////////////////////////
+## what is an interface
+- abstraction of functionality
+- describes "what" but not "how"
+- describes the methods' signature but not the implementation
+
+: interface describes "what" but not "how" part of the functionality. it is up to the implementor of the interface to describe "how" part.
+
+## real life examples
+- usb type c port
+- standard power outlet
+- ATM machine
+
+## interface example
+
+    type communicator interface{
+        sendMessage(to string, message string) error
+        receiveMessage(from string) (message string, err error)
+    }
+
+## implementing an interface 
+
+## interface values
+
+## empty interface
+
+## type assertions
+
+## type switch
+
+## single method interfaces
+    significance
+
+## single method interfaces
+    example in standard library
+        stringer
+        error

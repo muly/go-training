@@ -4,7 +4,7 @@ package main
 
 import "fmt"
 
-type student struct {
+type student struct { // user defined type
 	name    string
 	address string
 	marks   int
