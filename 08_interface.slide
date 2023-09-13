@@ -30,7 +30,23 @@
 ## implementing an interface 
 **basic interface implementation example**
 
-.play -numbers _concepts/09_interfaces/00a.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/09_interfaces/00a1.go /START OMIT/,/END OMIT/
+
+## implementing an interface 
+**basic interface implementation example**
+
+.play -numbers _concepts/09_interfaces/00a1copy.go /START OMIT/,/END OMIT/
+
+: we declare the variable of type interface, but initialize it with a concrete type that implements the interface
+
+## implementing an interface 
+**interface implementation must be done by a user defined types**
+
+: we cannot use built-in types to implement an interface, because we cannot add methods on a system type like string
+: the code in this example attempts to implement an interface by a built-in type
+
+.play -numbers _concepts/09_interfaces/00b.go /START OMIT/,/END OMIT/
+
 
 
 ## implementing an interface 
