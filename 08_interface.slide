@@ -4,7 +4,7 @@
 ## what is an interface
 - abstraction of functionality
 - describes "what" but not "how"
-- describes the methods' signature but not the implementation
+- describes the methods' signature but not the implementation/body
 
 : interface describes "what" but not "how" part of the functionality. it is up to the implementor of the interface to describe "how" part.
 
@@ -13,22 +13,33 @@
 - standard power outlet
 - ATM machine
 
+## interface syntax
+
+    type <interface name> interface{
+        <method-signature>
+        ........
+    }
+
 ## interface example
 
-    type communicator interface{
-        sendMessage(to string, message string) error
-        receiveMessage(from string) (message string, err error)
+    type shape interface {
+        area() float32
+        perimeter() float32
     }
 
 ## implementing an interface 
+**basic interface implementation example**
+
+.play -numbers _concepts/09_interfaces/00a.go /START OMIT/,/END OMIT/
+
+
+## implementing an interface 
+00b.go, 00c.go, 00d.go, 00e.go => 01.go
+
+// // an type can be implement more than one interface
+02.go
 
 ## interface values
-
-## empty interface
-
-## type assertions
-
-## type switch
 
 ## single method interfaces
     significance
@@ -37,3 +48,12 @@
     example in standard library
         stringer
         error
+
+## empty interface
+- empty interface
+- function with a parameter of type empty interface
+
+## type assertions
+
+## type switch
+

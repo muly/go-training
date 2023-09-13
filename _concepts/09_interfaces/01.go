@@ -1,3 +1,5 @@
+// combining all the previous concepts into single program
+
 package main
 
 import "fmt"
