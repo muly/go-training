@@ -3,7 +3,7 @@ package main
 
 import "fmt"
 
-// START OMIT
+
 type shape interface {
 	area() float32
 	perimeter() float32
@@ -23,8 +23,7 @@ func (s square) perimeter() float32 {
 func (s square) getColor() string {
 	return s.color
 }
-// END OMIT
-
+// START OMIT
 func main() {
 	var sq square
 	sq = square{ // square implements shape interface, because square has the area and perimeter methods implemented with the same signature.
@@ -44,3 +43,5 @@ func main() {
 	fmt.Println(sh.perimeter())
 	// fmt.Println(sh.getColor()) // ERROR: sh.getColor undefined (type shape has no field or method getColor)
 }
+
+// END OMIT

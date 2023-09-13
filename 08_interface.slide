@@ -30,12 +30,14 @@
 ## implementing an interface 
 **basic interface implementation example**
 
-.play -numbers _concepts/09_interfaces/00a1.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/09_interfaces/00a.go /START OMIT/,/END OMIT/
 
 ## implementing an interface 
 **basic interface implementation example**
 
-.play -numbers _concepts/09_interfaces/00a1copy.go /START OMIT/,/END OMIT/
+continued... 
+
+.play -numbers _concepts/09_interfaces/00a-copy.go /START OMIT/,/END OMIT/
 
 : we declare the variable of type interface, but initialize it with a concrete type that implements the interface
 
@@ -47,10 +49,23 @@
 
 .play -numbers _concepts/09_interfaces/00b.go /START OMIT/,/END OMIT/
 
+## implementing an interface 
+**a user defined type implementing an interface can have extra methods other than those defined by the interface**
+
+: in this example the type square have an extra method called `getColor()` which is not part of the interface definition
+
+.play -numbers _concepts/09_interfaces/00c.go /START OMIT/,/END OMIT/
+
+## implementing an interface 
+**a user defined type implementing an interface can have extra methods other than those defined by the interface**
+
+continued... 
+
+.play -numbers _concepts/09_interfaces/00c-copy.go /START OMIT/,/END OMIT/
 
 
 ## implementing an interface 
-00b.go, 00c.go, 00d.go, 00e.go => 01.go
+, 00d.go, 00e.go => 01.go
 
 // // an type can be implement more than one interface
 02.go
