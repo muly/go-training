@@ -1,8 +1,8 @@
-// user defined type implementing an interface must have all the methods defined by the interface
 package main
 
 import "fmt"
 
+// START OMIT
 type shape interface {
 	area() float32
 	perimeter() float32
@@ -23,3 +23,5 @@ func main() {
 	}
 	fmt.Println(sh.area())
 }
+
+// END OMIT

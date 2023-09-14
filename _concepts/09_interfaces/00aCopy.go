@@ -30,7 +30,7 @@ func main() {
 
 	// using interface
 	var sh shape
-	sh = square{ // square implements shape interface, because square has the area and perimeter methods implemented (with the same signature as in the interface definition).
+	sh = square{ // <-- 
 		length: 10,
 	}
 	fmt.Println(sh.area())
