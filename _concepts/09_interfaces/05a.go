@@ -1,4 +1,13 @@
-// empty interface value
+// empty interface
+
+// 2 method interface
+// implementing type must have those 2 matching methods
+
+// single method interface
+// implementing type must have those 1 matching method
+
+// 0 method interface, aka empty interface
+// implementing type must have 0 matching method, i.e all types will implement it
 
 package main
 
@@ -29,6 +38,7 @@ type printer interface {
 
 // implementing type must have that 1 matching method
 type canon struct {
+	name string
 }
 
 func (c canon) print(s string) {
@@ -36,40 +46,33 @@ func (c canon) print(s string) {
 }
 
 // 0 method interface
-type any interface{}
+type empty interface {
+	// Note: no methods
+}
 
 // implementing type must have 0 matching methods, i.e, all types will implement the empty interface
 
 func main() {
+	// 2 method interface
 	var s shape
-	s = square{
-		length: 10,
-	}
+	s = square{length: 10}
 	fmt.Println(s)
 
+	// 1 method interface
 	var p printer
-	p = canon{}
+	p = canon{name: "CANON PRINTER"}
 
 	fmt.Println(p)
 
-	var a any
+	// empty interface
+	var a empty
+	
+	a = square{length: 10}
+	fmt.Println(a)
 
-	a = square{
-		length: 10,
-	}
-
-	a = canon{}
+	a = canon{name: "CANON PRINTER"}
+	fmt.Println(a)
 
 	a = 10
 	fmt.Println(a)
-
 }
-
-// 2 method interface
-// implementing type must have those 2 matching methods
-
-// single method interface
-// implementing type must have those 1 matching method
-
-// 0 method interface
-// implementing type must have 0 matching method

@@ -1,4 +1,4 @@
-// interface value, and its concrete type
+// interface value %v, and its concrete type %T
 
 package main
 

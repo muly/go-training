@@ -33,6 +33,10 @@
         perimeter() float32
     }
 
+
+////////////////////////////////////////////////////////////////////////
+## implementing an interface 
+
 ////////////////////////////////////////////////////////////////////////
 ## implementing an interface 
 **basic interface implementation example**
@@ -84,12 +88,19 @@ continued...
 
 ////////////////////////////////////////////////////////////////////////
 ## implementing an interface 
+**an interface can be implemented by more than one type**
 , 00e.go => 01.go
+
+## implementing an interface 
+**Nil interface value**
+00f.go 
 
 // // an type can be implement more than one interface
 02.go
 
-## interface values
+## interface type %T and interface values
+03.go
+
 
 ## single method interfaces
     significance
@@ -101,9 +112,14 @@ continued...
 
 ## empty interface
 - empty interface
+05a.go, 05b.go
 - function with a parameter of type empty interface
+05c.go
 
 ## type assertions
+06a.go 
+06b.go
 
 ## type switch
-
+06c.go type switch
+06d.go another type switch example by using value returned by type switch
