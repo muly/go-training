@@ -1,18 +1,17 @@
-// an type can be implement more than one interface
+// an type can implement more than one interface
 
 package main
 
 import "fmt"
-
+// START OMIT
 type shape interface {
 	area() float32
 	perimeter() float32
 }
-
-type colorObject interface {
+type colorType interface {
 	getColor() string
 }
-
+//////////////////////
 type square struct {
 	length float32
 	color  string
@@ -28,6 +27,8 @@ func (s square) getColor() string {
 	return s.color
 }
 
+// END OMIT
+
 func main() {
 	var s shape
 	s = square{
@@ -35,7 +36,7 @@ func main() {
 		color:  "red",
 	}
 
-	var c colorObject
+	var c colorType
 	c = square{
 		length: 10,
 		color:  "red",

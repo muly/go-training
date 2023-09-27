@@ -37,56 +37,59 @@
 ////////////////////////////////////////////////////////////////////////
 ## implementing an interface 
 
-////////////////////////////////////////////////////////////////////////
+
 ## implementing an interface 
 **basic interface implementation example**
 
 .play -numbers _concepts/09_interfaces/00a.go /START OMIT/,/END OMIT/
+
 
 ## implementing an interface 
 **basic interface implementation example**
 
 continued... 
 
-.play -numbers _concepts/09_interfaces/00aCopy.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/09_interfaces/00a.go /^func main/,/^}/
 : we declare the variable of type interface, but initialize it with a concrete type that implements the interface
 
 : square implements shape interface, because square has the area() and perimeter() methods implemented (with the same signature as in the interface definition).
 
-////////////////////////////////////////////////////////////////////////
+
 ## implementing an interface 
-**interface implementation must be done by a user defined types**
+**interface implementation must be done by a user defined types, but not system type**
 
 : we cannot use built-in types to implement an interface, because we cannot add methods on a system type like string
 : the code in this example attempts to implement an interface by a built-in type
 
 .play -numbers _concepts/09_interfaces/00b.go /START OMIT/,/END OMIT/
 
-////////////////////////////////////////////////////////////////////////
+
 ## implementing an interface 
 **user defined type implementing an interface must have all the methods defined by the interface**
 
-.play -numbers _concepts/09_interfaces/00d.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/09_interfaces/00c.go /START OMIT/,/END OMIT/
 
 
-////////////////////////////////////////////////////////////////////////
+
 ## implementing an interface 
 **a user defined type implementing an interface can have extra methods other than those defined by the interface**
 
 : in this example the type square have an extra method called `getColor()` which is not part of the interface definition
 
-.play -numbers _concepts/09_interfaces/00c.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/09_interfaces/00d.go /START OMIT/,/END OMIT/
 
 ## implementing an interface 
 **a user defined type implementing an interface can have extra methods other than those defined by the interface**
 
 continued... 
 
-.play -numbers _concepts/09_interfaces/00cCopy.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/09_interfaces/00d.go /^func main/,/^}/
 
 
 
 ////////////////////////////////////////////////////////////////////////
+
+
 ## implementing an interface 
 **an interface can be implemented by more than one type**
 , 00e.go => 01.go
@@ -95,11 +98,17 @@ continued...
 **Nil interface value**
 00f.go 
 
-// // an type can be implement more than one interface
-02.go
+## implementing an interface 
+**an type can implement more than one interface**
 
+.play -numbers _concepts/09_interfaces/02.go /START OMIT/,/END OMIT/
+
+
+////////////////////////////////////////////////////////////////////////
 ## interface type %T and interface values
 03.go
+
+// .code _concepts/09_interfaces/03.go /^type square/,/^}/
 
 
 ## single method interfaces
@@ -110,14 +119,94 @@ continued...
         stringer
         error
 
+## 
+**function with interface type as a parameter**
+
+04.go
+
 ## empty interface
-- empty interface
-05a.go, 05b.go
-- function with a parameter of type empty interface
-05c.go
+
+## empty interface
+**2 method interface**
+
+    type shape interface {
+        area() float32
+        perimeter() float32
+    }
+
+    type square struct {
+        length float32
+    }
+
+    func (s square) area() float32 {
+        return s.length * s.length
+    }
+    func (s square) perimeter() float32 {
+        return s.length * 4
+    }
+
+implementing type must have those 2 matching methods
+
+
+## empty interface
+**single method interface**
+
+    type printer interface {
+        print(string)
+    }
+
+    type canon struct {
+        name string
+    }
+
+    func (c canon) print(s string) {
+        fmt.Println(s)
+    }
+
+
+implementing type must have those 1 matching method
+
+
+## empty interface
+**0 method interface, aka empty interface**
+
+    type empty interface {
+        // Note: no methods
+    }
+
+implementing type must have 0 matching method, i.e all types will implement it
+
+: 05a.go show the complete code if needed
+
+## empty interface
+
+	type empty interface{} 
+	var a empty
+	
+or 
+
+	var a interface{} // No need to define a type for empty interface
+
+
+## empty interface
+.play -numbers _concepts/09_interfaces/05b.go /START OMIT/,/END OMIT/
+
+
+
+## empty interface
+**function with a parameter of type empty interface**
+
+.play -numbers _concepts/09_interfaces/05c.go /START OMIT/,/END OMIT/
 
 ## type assertions
-06a.go 
+
+## type assertions
+**type casting: lets look into type casting first**
+
+.play -numbers _concepts/09_interfaces/06a.go /START OMIT/,/END OMIT/
+
+
+## type assertions
 06b.go
 
 ## type switch

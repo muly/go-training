@@ -6,17 +6,17 @@ import (
 	"fmt"
 )
 
-
+// START OMIT
 
 func myPrint(a interface{}) {
-	// To some stuff
+	// do some stuff
 	fmt.Println(a)
 }
 
 func main() {
-	var s string = "golang"
-	var i int = 999
-	var st = struct {
+	var s string = "golang" // string
+	var i int = 999         // int
+	var st = struct {       // struct
 		s string
 		i int
 	}{s: "hello", i: 10}
@@ -25,3 +25,5 @@ func main() {
 	myPrint(i)
 	myPrint(st)
 }
+
+// END OMIT

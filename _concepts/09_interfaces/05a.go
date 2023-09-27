@@ -1,14 +1,3 @@
-// empty interface
-
-// 2 method interface
-// implementing type must have those 2 matching methods
-
-// single method interface
-// implementing type must have those 1 matching method
-
-// 0 method interface, aka empty interface
-// implementing type must have 0 matching method, i.e all types will implement it
-
 package main
 
 import "fmt"

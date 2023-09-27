@@ -5,8 +5,8 @@
 package main
 
 import "fmt"
-
 func main() {
+	// START OMIT
 	var i int = 10
 	var f float32 = 12.34
 	fmt.Println(i, f)
@@ -21,4 +21,6 @@ func main() {
 
 	var s string = "100"
 	// var k int = int(s) // ERROR: cannot convert s (variable of type string) to type int
+
+// END OMIT
 }

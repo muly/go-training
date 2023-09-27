@@ -8,7 +8,8 @@ func main() {
 
 	// type empty interface{} // No need to define a type for empty interface
 	// var a empty
-	var a interface{} // No need to define a type for empty interface
+	// START OMIT
+	var a interface{}
 
 	a = square{length: 10}
 	fmt.Println(a)
@@ -18,4 +19,5 @@ func main() {
 
 	a = 10
 	fmt.Println(a)
+	// END OMIT
 }
