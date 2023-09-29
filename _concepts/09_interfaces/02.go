@@ -3,6 +3,7 @@
 package main
 
 import "fmt"
+
 // START OMIT
 type shape interface {
 	area() float32
@@ -11,7 +12,8 @@ type shape interface {
 type colorType interface {
 	getColor() string
 }
-//////////////////////
+
+// ////////////////////
 type square struct {
 	length float32
 	color  string
@@ -31,18 +33,16 @@ func (s square) getColor() string {
 
 func main() {
 	var s shape
-	s = square{
-		length: 10,
-		color:  "red",
-	}
+	s = square{length: 10, color: "red"}
 
 	var c colorType
-	c = square{
-		length: 10,
-		color:  "red",
-	}
+	c = square{length: 10, color: "red"}
 
 	fmt.Println(s.area())
 	fmt.Println(s.perimeter())
+	// fmt.Println(s.getColor()) // ERROR
+
+	// fmt.Println(c.area())      // ERROR
+	// fmt.Println(c.perimeter()) // ERROR
 	fmt.Println(c.getColor())
 }

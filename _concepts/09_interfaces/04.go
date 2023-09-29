@@ -1,14 +1,16 @@
-// function with interface type as a parameter
+// an type can implement more than one interface
 
 package main
 
 import "fmt"
 
+// START OMIT
 type shape interface {
 	area() float32
 	perimeter() float32
 }
 
+// ////////////////////
 type square struct {
 	length float32
 }
@@ -20,10 +22,10 @@ func (s square) perimeter() float32 {
 	return s.length * 4
 }
 
+// ////////////////////
 type rectangle struct {
 	length float32
 	width  float32
-	color  string
 }
 
 func (s rectangle) area() float32 {
@@ -32,31 +34,27 @@ func (s rectangle) area() float32 {
 func (s rectangle) perimeter() float32 {
 	return (s.length + s.width) * 2
 }
-func (s rectangle) getColor() string {
-	return s.color
-}
 
-func describeSquare(s square) {
-	fmt.Println("square data: ", s)
-	fmt.Println("square area: ", s.area())
-	fmt.Println("square perimeter: ", s.perimeter())
-	fmt.Println("--------")
-}
+// END OMIT
+
+// func describeSquare(s square) {
+// 	fmt.Printf("I'm a square, with data %+v\n", s)
+// }
+
+// func describeRectangle(s rectangle) {
+// 	fmt.Printf("I'm a rectangle, with data %+v\n", s)
+// }
 
 func describeShape(s shape) {
-	fmt.Println("shape data: ", s)
-	fmt.Println("shape area: ", s.area())
-	fmt.Println("shape perimeter: ", s.perimeter())
-	fmt.Println("--------")
+	fmt.Printf("I'm a shape of type %T, with data %+v\n", s, s)
 }
 
 func main() {
-	sq := square{length: 10}
-	r := rectangle{length: 10, width: 20}
+	var s shape
 
-	describeSquare(sq)
-	// describeSquare(r) // ERROR: cannot use r (variable of type rectangle) as square value in argument to describeSquare
+	s = square{length: 10}
+	describeShape(s)
 
-	describeShape(sq)
-	describeShape(r)
+	s = rectangle{length: 10, width: 5}
+	describeShape(s)
 }

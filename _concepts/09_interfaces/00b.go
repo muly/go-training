@@ -10,3 +10,7 @@ func (s string) area() float32 { // ERROR: cannot define new methods on non-loca
 }
 
 // END OMIT
+
+func main(){
+	
+}

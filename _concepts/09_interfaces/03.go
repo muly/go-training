@@ -33,15 +33,11 @@ func (s rectangle) perimeter() float32 {
 }
 
 func main() {
-	var s shape
-	s = square{
-		length: 10,
-	}
-	fmt.Printf("%T: %+v\n", s, s)
+	var s shape // interface
 
-	s = rectangle{
-		length: 10,
-		width:  20,
-	}
-	fmt.Printf("%T: %+v\n", s, s)
+	s = square{length: 10}
+	fmt.Printf("type is %T: value is %+v\n", s, s)
+
+	s = rectangle{length: 10, width: 20}
+	fmt.Printf("type is %T: value is %+v\n", s, s)
 }

@@ -61,7 +61,27 @@ continued...
 : we cannot use built-in types to implement an interface, because we cannot add methods on a system type like string
 : the code in this example attempts to implement an interface by a built-in type
 
+incorrect example
+
 .play -numbers _concepts/09_interfaces/00b.go /START OMIT/,/END OMIT/
+
+
+## implementing an interface 
+**interface implementation must be done by a user defined types, but not system type**
+
+correct example
+
+.play -numbers _concepts/09_interfaces/00b2.go /START OMIT/,/END OMIT/
+
+
+## implementing an interface 
+**interface implementation must be done by a user defined types, but not system type**
+
+correct example
+
+.play -numbers _concepts/09_interfaces/00b3.go /START OMIT/,/END OMIT/
+
+
 
 
 ## implementing an interface 
@@ -87,43 +107,106 @@ continued...
 
 
 
-////////////////////////////////////////////////////////////////////////
-
 
 ## implementing an interface 
 **an interface can be implemented by more than one type**
 , 00e.go => 01.go
 
+////////////////////////////////////////////////////////////////////////
+
+
+
 ## implementing an interface 
 **Nil interface value**
-00f.go 
+
+.play -numbers _concepts/09_interfaces/00f.go /START OMIT/,/END OMIT/
+
+
+## implementing an interface 
+**Nil interface value**
+
+continued
+
+.play -numbers _concepts/09_interfaces/00f.go /^func main/,/^}/
+
 
 ## implementing an interface 
 **an type can implement more than one interface**
 
 .play -numbers _concepts/09_interfaces/02.go /START OMIT/,/END OMIT/
 
+## implementing an interface 
+**an type can implement more than one interface**
+
+continued
+
+.play -numbers _concepts/09_interfaces/02.go /^func main/,/^}/
+
+: even though the getColor() is a method on the "square" type, it cannot be accessed using the "shape" interface type variable.
+
+
+
+////////////////////////////////////////////////////////////////////////
+## single method interfaces
+
+## single method interfaces
+**significance**
+// TODO: 
+
+## single method interfaces
+**example built in Go**
+
+*stringer*
+
+    type stringer interface {
+        String() string
+    }
+
+*error*
+
+    type error interface {
+        Error() string
+    }
+
 
 ////////////////////////////////////////////////////////////////////////
 ## interface type %T and interface values
-03.go
+
+
+## interface type %T and interface values
+
 
 // .code _concepts/09_interfaces/03.go /^type square/,/^}/
+.play -numbers _concepts/09_interfaces/03.go /^func main/,/^}/
 
 
-## single method interfaces
-    significance
 
-## single method interfaces
-    example in standard library
-        stringer
-        error
+////////////////////////////////////////////////////////////////////////
+## function with interface type as a parameter
 
-## 
-**function with interface type as a parameter**
+.play -numbers _concepts/09_interfaces/04.go /START OMIT/,/END OMIT/
 
-04.go
+## function with interface type as a parameter
+continued
 
+// TODO: add notes that the below functions are bad to have, instead create a function that takes interface type
+
+    func describeSquare(s square) {
+        fmt.Printf("I'm a square, with data %+v\n", s)
+    }
+    func describeRectangle(s rectangle) {
+        fmt.Printf("I'm a rectangle, with data %+v\n", s)
+    }
+
+.code -numbers _concepts/09_interfaces/04.go /^func describeShape/,/^}/
+
+## function with interface type as a parameter
+continued
+
+.play -numbers _concepts/09_interfaces/04.go /^func main/,/^}/
+
+
+////////////////////////////////////////////////////////////////////////
 ## empty interface
 
 ## empty interface
@@ -174,7 +257,9 @@ implementing type must have those 1 matching method
         // Note: no methods
     }
 
-implementing type must have 0 matching method, i.e all types will implement it
+implementing type must have 0 matching method,
+
+i.e all types will implement it
 
 : 05a.go show the complete code if needed
 
@@ -189,7 +274,16 @@ or
 
 
 ## empty interface
-.play -numbers _concepts/09_interfaces/05b.go /START OMIT/,/END OMIT/
+**example**
+
+.code -numbers _concepts/09_interfaces/05b.go /START OMIT/,/END OMIT/
+
+## empty interface
+**example**
+
+continued
+
+.play -numbers _concepts/09_interfaces/05b.go  /^func main/,/^}/
 
 
 
@@ -198,6 +292,7 @@ or
 
 .play -numbers _concepts/09_interfaces/05c.go /START OMIT/,/END OMIT/
 
+////////////////////////////////////////////////////////////////////////
 ## type assertions
 
 ## type assertions
@@ -212,3 +307,28 @@ or
 ## type switch
 06c.go type switch
 06d.go another type switch example by using value returned by type switch
+
+
+////////////////////////////////////////////////////////////////////////
+## quiz
+
+1) does this implement?
+type shape interface {
+	color(a string) string
+}
+type square struct {
+}
+func (s square) color(b string) string {
+	return "hello "
+}
+
+
+2) does this implement?
+type shape interface {
+	color(string) string
+}
+type square struct {
+}
+func (s square) color(b string) string {
+	return "hello "
+}
