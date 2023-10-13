@@ -15,6 +15,11 @@
 % present
 2022/11/15 08:20:33 Open your web browser and visit http://127.0.0.1:3999
 
+### local: presenter mode
+present -notes
+
+press 'N' from the browser to display presenter notes
+
 ### go talks
 https://go-talks.appspot.com/github.com/muly/go-training/slice.slide [server error]
 

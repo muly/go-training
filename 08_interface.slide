@@ -1,0 +1,518 @@
+# interface
+
+////////////////////////////////////////////////////////////////////////
+## what is an interface
+- abstraction of functionality
+- describes "what" but not "how"
+- describes the methods' signature but not the implementation/body
+
+: interface describes "what" but not "how" part of the functionality. it is up to the implementor of the interface to describe "how" part.
+
+
+
+## real life examples
+- usb type c port
+- standard power outlet
+- ATM machine
+
+
+
+## interface syntax
+
+    type <interface name> interface{
+        <method-signature>
+        ........
+    }
+
+
+
+## interface example
+
+    type shape interface {
+        area() float32
+        perimeter() float32
+    }
+
+
+////////////////////////////////////////////////////////////////////////
+## implementing an interface 
+
+
+## implementing an interface 
+**basic interface implementation example**
+
+.play -numbers _concepts/09_interfaces/00a.go /START OMIT/,/END OMIT/
+
+
+## implementing an interface 
+**basic interface implementation example**
+
+continued... 
+
+.play -numbers _concepts/09_interfaces/00a.go /^func main/,/^}/
+: we declare the variable of type interface, but initialize it with a concrete type that implements the interface
+
+: square implements shape interface, because square has the area() and perimeter() methods implemented (with the same signature as in the interface definition).
+
+
+## implementing an interface 
+**interface implementation must be done by a user defined types, but not system type**
+
+: we cannot use built-in types to implement an interface, because we cannot add methods on a system type like string
+: the code in this example attempts to implement an interface by a built-in type
+
+incorrect example
+
+.play -numbers _concepts/09_interfaces/00b.go /START OMIT/,/END OMIT/
+
+
+## implementing an interface 
+**interface implementation must be done by a user defined types, but not system type**
+
+correct example
+
+.play -numbers _concepts/09_interfaces/00b2.go /START OMIT/,/END OMIT/
+
+
+## implementing an interface 
+**interface implementation must be done by a user defined types, but not system type**
+
+correct example
+
+.play -numbers _concepts/09_interfaces/00b3.go /START OMIT/,/END OMIT/
+
+
+
+
+## implementing an interface 
+**user defined type implementing an interface must have all the methods defined by the interface**
+
+.play -numbers _concepts/09_interfaces/00c.go /START OMIT/,/END OMIT/
+
+
+
+## implementing an interface 
+**a user defined type implementing an interface can have extra methods other than those defined by the interface**
+
+: in this example the type square have an extra method called `getColor()` which is not part of the interface definition
+
+.play -numbers _concepts/09_interfaces/00d.go /START OMIT/,/END OMIT/
+
+## implementing an interface 
+**a user defined type implementing an interface can have extra methods other than those defined by the interface**
+
+continued... 
+
+.play -numbers _concepts/09_interfaces/00d.go /^func main/,/^}/
+
+
+
+
+## implementing an interface 
+**an interface can be implemented by more than one type**
+, 00e.go => 01.go
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+## implementing an interface 
+**Nil interface value**
+
+.play -numbers _concepts/09_interfaces/00f.go /START OMIT/,/END OMIT/
+
+
+## implementing an interface 
+**Nil interface value**
+
+continued
+
+.play -numbers _concepts/09_interfaces/00f.go /^func main/,/^}/
+
+
+## implementing an interface 
+**an type can implement more than one interface**
+
+.play -numbers _concepts/09_interfaces/02.go /START OMIT/,/END OMIT/
+
+## implementing an interface 
+**an type can implement more than one interface**
+
+continued
+
+.play -numbers _concepts/09_interfaces/02.go /^func main/,/^}/
+
+: even though the getColor() is a method on the "square" type, it cannot be accessed using the "shape" interface type variable.
+
+
+
+////////////////////////////////////////////////////////////////////////
+## single method interfaces
+
+## single method interfaces
+**significance**
+// TODO: 
+
+## single method interfaces
+**example built in Go**
+
+*stringer*
+
+    type stringer interface {
+        String() string
+    }
+
+*error*
+
+    type error interface {
+        Error() string
+    }
+
+
+////////////////////////////////////////////////////////////////////////
+## interface type %T and interface values
+
+
+## interface type %T and interface values
+
+
+// .code _concepts/09_interfaces/03.go /^type square/,/^}/
+.play -numbers _concepts/09_interfaces/03.go /^func main/,/^}/
+
+
+
+////////////////////////////////////////////////////////////////////////
+## function with interface as a parameter
+
+## function with interface as a parameter
+
+.play -numbers _concepts/09_interfaces/04.go /START OMIT/,/END OMIT/
+
+## function with interface as a parameter
+continued
+
+// TODO: add notes that the below functions are bad to have, instead create a function that takes interface type
+
+    func describeSquare(s square) {
+        fmt.Printf("I'm a square, with data %+v\n", s)
+    }
+    func describeRectangle(s rectangle) {
+        fmt.Printf("I'm a rectangle, with data %+v\n", s)
+    }
+
+.code -numbers _concepts/09_interfaces/04.go /^func describeShape/,/^}/
+
+## function with interface as a parameter
+continued
+
+.play -numbers _concepts/09_interfaces/04.go /^func main/,/^}/
+
+
+////////////////////////////////////////////////////////////////////////
+## empty interface
+
+## empty interface
+**2 method interface**
+
+    type shape interface {
+        area() float32
+        perimeter() float32
+    }
+
+    type square struct {
+        length float32
+    }
+
+    func (s square) area() float32 {
+        return s.length * s.length
+    }
+    func (s square) perimeter() float32 {
+        return s.length * 4
+    }
+
+implementing type must have those 2 matching methods
+
+
+## empty interface
+**single method interface**
+
+    type printer interface {
+        print(string)
+    }
+
+    type canon struct {
+        name string
+    }
+
+    func (c canon) print(s string) {
+        fmt.Println(s)
+    }
+
+
+implementing type must have those 1 matching method
+
+
+## empty interface
+**0 method interface, aka empty interface**
+
+    type empty interface {
+        // Note: no methods
+    }
+
+implementing type must have 0 matching method,
+
+i.e all types will implement it
+
+: 05a.go show the complete code if needed
+
+## empty interface
+
+	type empty interface{} 
+	var a empty
+	
+or 
+
+	var a interface{} // No need to define a type for empty interface
+
+
+## empty interface
+**example**
+
+.code -numbers _concepts/09_interfaces/05b.go /START OMIT/,/END OMIT/
+
+## empty interface
+**example**
+
+continued
+
+.play -numbers _concepts/09_interfaces/05b.go  /^func main/,/^}/
+
+
+
+## empty interface
+**function with a parameter of type empty interface**
+
+.play -numbers _concepts/09_interfaces/05c.go /START OMIT/,/END OMIT/
+
+////////////////////////////////////////////////////////////////////////
+## type assertions
+
+## type assertions
+what is the output?
+
+	var i interface{}
+	i = 10
+
+	var j int
+	j = i
+
+: lets breakdown these lines of code
+: i is empty interface and holds a integer 
+: j is integer type
+: we are trying to initialize j with i
+
+
+: .
+: in order to successfully so what we need here is, 
+: an access to the concrete type from object of interface type
+: so that we can grab the concrete type from the interface type and do the assignment
+: type assertion provides this access
+
+
+## type assertions
+**type casting: lets look into type casting first**
+
+.play -numbers _concepts/09_interfaces/06a.go /START OMIT/,/END OMIT/
+
+
+## type assertions
+**syntax**
+
+    t := i.(T)
+
+
+
+## type assertions
+**example**
+
+.play -numbers _concepts/09_interfaces/06b1.go /^func main/,/^}/
+
+: End Note: but what if the asserted type is not compatible with the type of the data saved in the interface?
+// TODO: need to check the terminology used in above notes and correct if required.
+
+## type assertions
+what is the output of this?
+
+.code -numbers _concepts/09_interfaces/06b2.go /START OMIT/,/END OMIT/
+
+: Note: we are initializing the empty interface with a integer value, but we are type asserting to a string 
+
+: .
+: End Note: lets run and see
+
+## type assertions
+
+.play -numbers _concepts/09_interfaces/06b2.go /^func main/,/^}/
+
+: PANIC
+
+: .
+: End Note: before we discuss the fix for this, 
+: lets take a scenario where we have a function (that takes empty interface as parameter), 
+: and we call this function multiple times by passing different types of data
+: how can we type assert safely without knowing if the underlying type of the data being passed to this function is compatible or not?
+
+
+
+## type assertions
+
+: here we have a function named "convert" that takes empty interface as parameter
+: this function calls another function "processInt" that takes integer as parameter, so we have type assertion to convert to integer before passing it
+: then it calls another function "processFloat64" that takes float as parameter, so we have type assertion to convert to float before passing it
+: in the main function, we are calling convert function twice, first passing the integer, and second passing the float.
+
+
+.code -numbers _concepts/09_interfaces/06b3.go /^func main/,/^}/
+.code -numbers _concepts/09_interfaces/06b3.go /^func convert/,/^}/
+.play -numbers _concepts/09_interfaces/06b3.go /START OMIT/,/END OMIT/
+
+: .
+: QUESTION: what do you think is the output of this program?
+: .
+: ANSWER: when the convert function is called first with integer as parameter, 
+: it successfully type asserts the interface to integer and executes the "processInt" function, 
+: but panics when type asserting the interface to float while calling the "processFloat64" function
+: remember, the interface variable is still holding the integer type during the first execution of "convert" function
+: .
+: SOLUTION: we need a mechanism to control when to call "processInt" function vs "processFloat64" function depending on the type of the data being passed
+
+
+## type assertions
+**revisiting type assertion syntax**
+
+    t := i.(T)
+
+: t := i.(T)
+: If i does not hold a T, the statement will trigger a panic.
+*type assertion returns an optional second value*
+
+    t, ok := i.(T)
+
+: .
+: t, ok := i.(T)
+: there is a optional second value returned by type assertion which is a bool type indicating if i holds the value of type T or not
+: if we use 2 return parameters approach, code will not result in panic if i doesn't hold the value of that type.
+
+.link https://go.dev/tour/methods/15
+
+
+## type assertions
+with solution
+
+change from
+
+.code -numbers _concepts/09_interfaces/06b3.go /^func convert/,/^}/
+
+to
+
+.play -numbers _concepts/09_interfaces/06b4.go /^func convert/,/^}/
+
+
+## type assertions
+**question**
+
+    t := i.(T)
+vs 
+
+    t, _ := i.(T)
+
+: QUESTION: what is the difference between these 2 lines of code?
+
+// TODO: need to prepare more notes on this, along with the small executable programs printing t when type is not compatible
+
+
+////////////////////////////////////////////////////////////////////////
+## type switch
+
+
+## type switch
+**syntax**
+
+    switch v := i.(type) {
+    case T:
+        // here v has type T
+    case S:
+        // here v has type S
+    default:
+        // no match; here v has the same type as i
+    }
+
+read more: 
+
+.link https://go.dev/tour/methods/16 type switch go tour
+
+: instead of elaborate if-else-if structure, we can use a switch to simplify code
+
+## type switch
+**complete example**
+
+.code -numbers _concepts/09_interfaces/06c.go /^func convert/,/^}/
+.play -numbers _concepts/09_interfaces/06c.go /^func main/,/^}/
+
+: rewriting the previous code using type switch instead of if-else-if blocks
+: .
+: we also simplified main() function by eliminating the need of the variable i, for the sake of simplicity.
+
+
+## type switch
+**another version**
+
+changing 
+
+    switch i.(type) {
+
+to 
+
+	switch v := i.(type) {
+
+.play -numbers _concepts/09_interfaces/06d.go /^func convert/,/^}/
+
+: this is slightly modifying the type switch
+: we are saving the i.(type) into a variable and using that instead if i.(int) and i.(float64) 
+
+
+////////////////////////////////////////////////////////////////////////
+## quiz
+
+## quiz
+
+does this implement?
+
+    type shape interface {
+        color(a string) string
+    }
+
+    type square struct {
+    }
+    func (s square) color(b string) string {
+        return "hello "
+    }
+
+: NOTE: the input parameter variable name is different in the interface definition vs the method definition
+
+## quiz
+does this implement?
+
+    type shape interface {
+        color(string) string
+    }
+    
+    type square struct {
+    }
+    func (s square) color(b string) string {
+        return "hello "
+    }
+
+: NOTE: the input parameter variable name is missing in the interface definition, where it is there in the method definition
+
+// TODO: need to add a lot more quiz questions on interface implementation with different combinations 
