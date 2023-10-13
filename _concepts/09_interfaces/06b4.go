@@ -1,25 +1,29 @@
-// type switch
+// type assertion
 
 package main
 
 import "fmt"
 
 func main() {
-	convert(10)
+	var i interface{}
 
-	convert(12.34)
+	i = 10
+	convert(i)
 
-	convert("hello")
+	i = 12.34
+	convert(i)
 }
 
 func convert(i interface{}) {
-	switch i.(type) {
-	case int:
+	fmt.Printf("%T\n", i)
+	_, ok := i.(int)
+	if ok {
 		processInt(i.(int))
-	case float64:
-		processFloat64(i.(float64))
-	default:
-		fmt.Printf("unsupported type %T\n", i)
+	}
+
+	f, ok := i.(float64)
+	if ok {
+		processFloat64(f)
 	}
 }
 

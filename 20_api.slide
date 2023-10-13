@@ -52,9 +52,11 @@ TODO: need to find a diagram or make one
 
 
 
+## RESTful API standard: request
+
 ## RESTful API standard
 **request anatomy**
-- url/uri
+- path: url/uri/resource
 - method
 - request body
 - headers
@@ -66,17 +68,28 @@ TODO: need to find a diagram or make one
 indicates the type of the request operation: CRUD (Create Read Update Delete) operations and more
 - POST: creating a new resource
 - GET: get details of an existing resource
-- PUT: updating an existing resource
-- PATCH: updating an existing resource
 - DELETE: deleting an existing resource
+- PUT: updating an existing resource, updates the complete record (all fields)
+- PATCH: updating an existing resource, by passing only the fields to be updated
 - and more uncommon methods
     
+// TODO: compare these methods with CRUD 
+// SQL  vs  REST
+// INSERT   POST
+// SELECT   GET
+// DELETE   DELETE
+// UPDATE   PUT/PATCH
+
 ## RESTful API standard
 **request: path**
 
 path includes uri (universal resource identifier)
 
-example: in www.example.com/student/123 the "student/123" identifies the resource and is called the URI (in general)
+example: in www.example.com/api/student/123 
+- "/api" is the optional prefix to indicate that this is a API URL
+- "student/123" identifies the resource and is called the URI (in general)
+
+// TODO: (at a later slide) add examples of how path will be foe different methods
 
 ## RESTful API standard
 **request: body**
@@ -87,10 +100,15 @@ example (json):
 
     {"name":"rohit","addr":"","marks":300}
 
+: data can be of any format (example, json, plain text, html, etc) as long as the client and server agrees upon
+
 ## RESTful API standard
 **request: headers** 
 
-metadata in key value format.
+key value pairs used to store
+- metadata
+- user authentication
+- and more
 
 example: 
 
@@ -99,9 +117,15 @@ example:
 - there are many common headers (like above), 
 - the server and client can define their own headers, as long as they both understand the purpose of it.
 
+## RESTful API standard: response
+
 ## RESTful API standard
 **response anatomy**
-- 
+
+- status code
+- response body
+- headers
+
 
 ## RESTful API standard
 **response: status code**
@@ -138,6 +162,11 @@ example:
 
 
 ## api server programming using net/http package
+
+1helloworld.go
+2server.go
+
+
 ## api server programming using gorilla mux package
 ## api server programming using other 3rd party packages
 ## api client programming using net/http package

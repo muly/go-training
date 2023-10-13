@@ -21,9 +21,9 @@ func main() {
 		i int
 	}{s: "hello", i: 10}
 
-	myPrint(s)
-	myPrint(i)
-	myPrint(st)
+	myPrint(s)  // passing string to parameter of type empty interface
+	myPrint(i)  // int
+	myPrint(st) // struct
 }
 
 // END OMIT
