@@ -1,0 +1,82 @@
+# switch
+
+
+## switch
+
+syntax:
+
+    switch{
+    case condition1:
+        // do stuff
+    }
+
+example: 
+
+.play -numbers _concepts/01_introduction/05switch/01switch.go /^func main/,/^}/
+
+
+## switch: default
+
+syntax:
+
+    switch{
+    case condition1:
+        // do stuff
+    default: 
+        // do stuff
+    }
+
+example: 
+
+.play -numbers _concepts/01_introduction/05switch/02default.go /^func main/,/^}/
+
+
+## switch: alternative to if-else ladder
+
+simplifies long if-else ladder
+
+example: if else ladder
+
+.play -numbers _concepts/01_introduction/05switch/03a_ifelse_ladder.go /^func main/,/^}/
+
+## switch: alternative to if-else ladder
+
+example: simplified with switch
+
+.play -numbers _concepts/01_introduction/05switch/03b_switch.go /^func main/,/^}/
+
+
+
+## switch: constant case expression
+lets take another example
+
+.play -numbers _concepts/01_introduction/05switch/04a_constant_case.go /^func main/,/^}/
+
+: note: all the operations here are equals with color variable on the left side. 
+: .
+: such operations can be simplified to.... (next slide)
+
+## switch: constant case expression
+
+that can be simplified as below
+
+.play -numbers _concepts/01_introduction/05switch/04b_constant_case.go /^func main/,/^}/
+
+
+
+
+## fallthrough
+executes the next block without checking the condition
+
+: unlike some programming languages, switch in Go doesn't fall through by default. we have to explicitly use the fallthrough keyword.
+
+TODO: add fallthrough example
+
+## break
+
+TODO: need to understand if break can be used with switch without a for loop. and also need to understand why break is associated with a switch, rather than the for loop.
+
+
+## type switch
+
+_covered in later slides with interfaces_
