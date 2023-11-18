@@ -1,0 +1,32 @@
+notes on how to import a private github.com module into a main repo
+
+step 1: on your computer
+make sure you have the ssh keys in github.com for the computer you are using. you should already have this if you are committing code and pushing the code to your github account.
+
+step 2a: on your main repo
+add below code to ~/.gitconfig
+
+    [url "ssh://git@github.com/"]
+        insteadOf = https://github.com/
+
+step 2b: on your main repo: TODO: need to test again if this is required or not
+set GOPRIVATE env variable
+
+    export GOPRIVATE=github.com/muly/* 
+
+step 3: on the private module repo
+make sure you have the tag created on the private repo.
+
+    git tag v1.0.0
+    git push origin v1.0.0
+
+step 4: on your main repo
+ge get the private repo 
+
+different options available
+
+    go get github.com/muly/product-scrape
+
+    go get github.com/muly/product-scrape@latest
+
+    go get github.com/muly/product-scrape@v1.0.0
