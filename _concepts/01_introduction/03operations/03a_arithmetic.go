@@ -11,6 +11,10 @@ func main() {
 	fmt.Println(a - b)
 	fmt.Println(a / b)
 	fmt.Println(a % b)
+	a++
+	fmt.Println("a =", a)
+	a--
+	fmt.Println("a =", a)
 }
 
 // END OMIT

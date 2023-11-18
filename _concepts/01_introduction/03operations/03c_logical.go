@@ -13,8 +13,8 @@ import "fmt"
 // || OR
 // !  NOT
 
-// START OMIT
 func main() {
+	// START OMIT
 	var a, b int = 10, 2
 	var class1, class2 = "go class", "java class"
 
@@ -24,10 +24,6 @@ func main() {
 	fmt.Println(!(a == b))
 
 	fmt.Println(!((a == b) && (class1 == class2)))
-
 	fmt.Println(!((a == b) || (class1 == class2)))
+	// END OMIT
 }
-
-// END OMIT
-
-

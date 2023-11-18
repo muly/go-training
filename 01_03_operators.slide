@@ -2,31 +2,62 @@
 
 ## Operators
 - arithmetic operators
-- relational operators
+- comparison operators
 - logical operators
+- bitwise operators
 
 ## arithmetic operators
 
+	+
+	- 
+	* 
+	/ 
+	% reminder
+	++ increment
+	-- decrement
+
 .play -numbers _concepts/01_introduction/03operations/03a_arithmetic.go /START OMIT/,/END OMIT/
 
+## comparison operators
 
+	==    equal
+	!=    not equal
+	<     less
+	<=    less or equal
+	>     greater
+	>=    greater or equal
 
-## relational operators
-.play -numbers _concepts/01_introduction/03operations/03b_relational.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/01_introduction/03operations/03b_comparison.go /START OMIT/,/END OMIT/
+
+.link https://go.dev/ref/spec#Comparison_operators see specs
 
 
 ## logical operators
 
-- logical and operator: && 
-- logical or operator: || 
-- logical not operator: !  
+	&&    conditional AND
+	||    conditional OR
+	!     NOT
 
 **Truth Table**
 
-	            AND     OR
- 	FALSE FALSE FALSE	FALSE
- 	FALSE TRUE 	FALSE	TRUE
- 	TRUE FALSE 	FALSE	TRUE
- 	TRUE TRUE 	TRUE	TRUE
+	Left	Right	AND	OR
+ 	FALSE	FALSE	FALSE	FALSE
+ 	FALSE	TRUE	FALSE	TRUE
+ 	TRUE 	FALSE	FALSE	TRUE
+ 	TRUE	TRUE	TRUE	TRUE
 
 .play -numbers _concepts/01_introduction/03operations/03c_logical.go /START OMIT/,/END OMIT/
+
+.link https://go.dev/ref/spec#Logical_operators see specs
+
+
+## bitwise operators
+
+	&	bitwise AND
+	|	bitwise OR
+	^	bitwise XOR
+	>>	binary right shift
+	<<	binary left shift
+
+
+TODO: prepare an example program
