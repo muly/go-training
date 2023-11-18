@@ -44,6 +44,12 @@ _source: https://en.m.wikipedia.org/wiki/Representational_state_transfer_
 
 
 ## RESTful API standard
+**characteristics of REST**
+
+https://www.scrapingbee.com/blog/six-characteristics-of-rest-api/
+
+
+## RESTful API standard
 **anatomy of API request and response**
 
 TODO: need to find a diagram or make one
@@ -51,13 +57,13 @@ TODO: need to find a diagram or make one
 : show these parts using postman
 
 
-
+////////////////////////////////////////////////////////////////////////
 ## RESTful API standard: request
 
 ## RESTful API standard
 **request anatomy**
-- path: url/uri/resource
 - method
+- path: url/uri/resource
 - request body
 - headers
 
@@ -72,13 +78,24 @@ indicates the type of the request operation: CRUD (Create Read Update Delete) op
 - PUT: updating an existing resource, updates the complete record (all fields)
 - PATCH: updating an existing resource, by passing only the fields to be updated
 - and more uncommon methods
+
+## sql vs rest
     
 // TODO: compare these methods with CRUD 
 // SQL  vs  REST
+// table    resource
 // INSERT   POST
 // SELECT   GET
 // DELETE   DELETE
 // UPDATE   PUT/PATCH
+
+
+## RESTful API standard
+**request: method**
+
+Idempotent REST APIs
+
+https://restfulapi.net/idempotent-rest-apis/
 
 ## RESTful API standard
 **request: path**
@@ -87,9 +104,10 @@ path includes uri (universal resource identifier)
 
 example: in www.example.com/api/student/123 
 - "/api" is the optional prefix to indicate that this is a API URL
-- "student/123" identifies the resource and is called the URI (in general)
+- "/student" identifies the resource and is called the URI (in general)
+- "/123" id
 
-// TODO: (at a later slide) add examples of how path will be foe different methods
+// TODO: (at a later slide) add examples of how path will be for different methods
 
 ## RESTful API standard
 **request: body**
@@ -101,6 +119,8 @@ example (json):
     {"name":"rohit","addr":"","marks":300}
 
 : data can be of any format (example, json, plain text, html, etc) as long as the client and server agrees upon
+: .
+: server can also accept data in multiple formats, in which case client should indicate the data type using the content-type header.
 
 ## RESTful API standard
 **request: headers** 
@@ -117,6 +137,7 @@ example:
 - there are many common headers (like above), 
 - the server and client can define their own headers, as long as they both understand the purpose of it.
 
+////////////////////////////////////////////////////////////////////////
 ## RESTful API standard: response
 
 ## RESTful API standard
@@ -138,18 +159,29 @@ numerical code indicating the status of the request process
 .link https://developer.mozilla.org/en-US/docs/Web/HTTP/Status and more 
 
 ## RESTful API standard
-**response: response body**
+**response: body**
 
 response data sent to the client by the server
+
+example (json): 
+
+    {"name":"rohit","addr":"","marks":300}
+
+: data can be of any format (example, json, plain text, html, etc) as long as the client and server agrees upon
+
 
 ## RESTful API standard
 **response: headers**
 
-metadata in key value format
+key value pairs used to store
+- metadata
+- user authentication
+- and more
 
 example: 
 
     Content-type: application/json
+    Content-type: application/xml
 
 
 ## RESTful API standard
@@ -161,6 +193,21 @@ example:
 .link https://www.youtube.com/watch?v=lsMQRaeKNDk Video: What is a REST API?
 
 
+////////////////////////////////////////////////////////////////////////
+## api designing using swagger
+
+## api designing using swagger
+**what is swagger**
+
+## api designing using swagger
+**swagger editor**
+https://editor.swagger.io/
+
+## api designing using swagger
+**example**
+
+
+////////////////////////////////////////////////////////////////////////
 ## api server programming using net/http package
 
 1helloworld.go
