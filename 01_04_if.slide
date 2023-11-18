@@ -1,0 +1,101 @@
+# if
+
+## if
+
+syntax
+
+    if <condition>{
+        // do stuff
+    }
+
+comparison operators: **== != < <= > >=**
+
+.play -numbers _concepts/01_introduction/04if/01if.go /^func main/,/^}/
+
+.link https://go.dev/ref/spec#If_statements see specs
+
+
+## if multiple conditions
+
+    if <multiple conditions>{
+        // do stuff
+    }
+
+    
+logical operators: **&& || !**
+
+examples: 
+
+    if (a > b) && (i == j){}
+    if !(a > b){}
+    if a <= b{} // same as above not example
+
+: for simplicity of the example, we are using empty curly parenthesis. but in real scenarios, we will have code within
+
+.play -numbers _concepts/01_introduction/04if/02if.go /^func main/,/^}/
+
+
+## else
+
+syntax
+
+    if <condition>{
+        // do stuff
+    }else{
+        // do other stuff
+    }
+
+example
+
+.play -numbers _concepts/01_introduction/04if/03else.go /^func main/,/^}/
+
+
+
+## elseif
+
+syntax
+
+    if <condition>{
+        // do stuff
+    }else if <other condition>{
+        // do other stuff
+    }else{
+        // do someother stuff
+    }
+
+example
+
+.play -numbers _concepts/01_introduction/04if/04elseif.go /^func main/,/^}/
+
+
+## quiz
+
+## quiz
+what is the output
+
+.play -numbers _concepts/01_introduction/04if/05q1.go /^func main/,/^}/
+
+: answer: syntax error. else should always start in the same line as the closing curly braces of the previous if/else-if block
+
+## quiz
+what is the output
+
+.play -numbers _concepts/01_introduction/04if/05q2.go /^func main/,/^}/
+
+: answer: "nothing is correct". the else case will be executed
+
+
+## nested if
+
+syntax:
+
+    if <condition>{
+        // do stuff
+        if <condition>{
+            // do stuff
+        }
+    }
+
+
+.play -numbers _concepts/01_introduction/04if/06nestedif.go /^func main/,/^}/
+
