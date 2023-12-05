@@ -20,6 +20,7 @@
 
 	complex64 complex128
 
+////////////////////////////////////////////////////////////////////////////////////
 
 ## declaring variables
 **different types of declaration**
@@ -44,16 +45,34 @@
 
 .play -numbers _concepts/01_introduction/01variables/1variable2-multiple-vars3.go /START OMIT/,/END OMIT/
 
+////////////////////////////////////////////////////////////////////////////////////
 
 ## variables scope
 .play -numbers _concepts/01_introduction/01variables/1variable3-scope.go /START OMIT/,/END OMIT/
 
-## package level variables
+## variables scope
+package level variables
+
 .play -numbers _concepts/01_introduction/01variables/1variable4-package-level.go /START OMIT/,/END OMIT/
+
+
+## variables scope
+variable shadowing (in a block)
+
+.play -numbers _concepts/01_introduction/01variables/1variable6a-variable-shadowing.go /START OMIT/,/END OMIT/
+
+## variables scope
+variable shadowing (in a function)
+
+.play -numbers _concepts/01_introduction/01variables/1variable6b-variable-shadowing.go /START OMIT/,/END OMIT/
+
+: the variable p1 initially declared at package level
+: and again shadowed within the main package
+: the shadowed variable (with value 20) has the scope of the main function, but not beyond that
+: where as the main variable with the package level scope (with value 10) can be accessed in the rest of the package.
+
+
+////////////////////////////////////////////////////////////////////////////////////
 
 ## default values
 .play -numbers _concepts/01_introduction/01variables/1variable5-default-values.go /START OMIT/,/END OMIT/
-
-## variable shadowing 
-.play -numbers _concepts/01_introduction/01variables/1variable6-variable-shadowing.go /START OMIT/,/END OMIT/
-

@@ -11,9 +11,9 @@ func main() {
 	fmt.Println(a - b)
 	fmt.Println(a / b)
 	fmt.Println(a % b)
-	a++
+	a++ // same as a = a + 1
 	fmt.Println("a =", a)
-	a--
+	a-- // same as a = a 1 1
 	fmt.Println("a =", a)
 }
 

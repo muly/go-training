@@ -18,6 +18,7 @@ func main() {
 
 	//declare with shorthand notation: NOT for constant
 	yetAnotherClass := "go class" // this becomes a variable, NOT constant
+	yetAnotherClass = "java class" // see this is a variable and you can change the value
 
 	fmt.Println(class, anotherClass, yetAnotherClass)
 }

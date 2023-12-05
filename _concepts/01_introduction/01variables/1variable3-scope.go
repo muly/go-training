@@ -11,10 +11,12 @@ func main() {
 
 	{ // this is the starting of the block
 		var b int = 1 // block level scope
-		fmt.Println("inside block 1:", p, f, b)
 		{ // this is an inner block
-			fmt.Println("inside inner block 1:", p, f, b)
+			var b2 int =2
+			fmt.Println("inside inner block 1:", p, f, b, b2)
 		}
+
+		fmt.Println("inside block 1:", p, f, b)
 	}
 
 	{ // this is another block
