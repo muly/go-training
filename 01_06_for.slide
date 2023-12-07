@@ -1,3 +1,143 @@
 # for
 
+////////////////////////////////////////////////////////////////////////////////////
+
+## for: standard loop
+
+3 optional clauses: 
+- counter variable declaration & initialization
+- exit condition
+- counter increment
+
+also
+- optional () around for clauses
+- mandatory {} around the body of for loop
+
+## for: standard loop
+
+syntax: 
+
+    for <variable declaration & initialization>; <exit condition>; <increment counter>{ 
+        ........................ 
+    } 
+
+example
+
+.play -numbers _concepts/01_introduction/06for/01afor.go /^func main/,/^}/
+
+
+## for: 
+example with optional: variable  declaration & initialization clause
+
+.play -numbers _concepts/01_introduction/06for/01bfor.go /^func main/,/^}/
+
+
 ## for
+example with optional: counter increment clause
+
+.play -numbers _concepts/01_introduction/06for/01cfor.go /^func main/,/^}/
+
+
+
+## for: while loop
+
+while loop is for loop with optional 
+
+- variable declaration/initialization clause 
+- counter increment clause
+
+syntax:
+
+    <variable declaration & initialization> 
+    for ;<exit condition>;{ 
+        ................... 
+    <increment counter> 
+    } 
+
+example
+
+.play -numbers _concepts/01_introduction/06for/01dfor.go /^func main/,/^}/
+
+
+: note: the semi-colon around the exit condition are optional, see commented code.
+
+## for: infinite loop
+
+infinite loop is for loop without all 3 clauses 
+
+syntax:
+
+    for { 
+        ................... 
+    } 
+
+example
+
+.play -numbers _concepts/01_introduction/06for/02afor.go /^func main/,/^}/
+
+.play -numbers _concepts/01_introduction/06for/02bfor.go /^func main/,/^}/
+
+: there is not exit clause
+
+////////////////////////////////////////////////////////////////////////////////////
+
+## for: nested loops
+
+TODO: 
+
+////////////////////////////////////////////////////////////////////////////////////
+
+## for: range
+
+used with 
+
+- array 
+- slice 
+- string 
+- map 
+- values received on a channel 
+
+more on this later
+
+////////////////////////////////////////////////////////////////////////////////////
+
+## for: break
+
+A "break" statement terminates execution of the innermost 
+
+- "for", 
+- "switch", 
+- "select" 
+
+statement within the same function.
+
+
+.link https://go.dev/ref/spec#Break_statements see specs
+
+
+## for: break
+
+    for <variable declaration & initialization>; <exit condition>; <increment counter>{ 
+        ........................ 
+        if <some condition>{
+            break
+        }
+        ........................ 
+    } 
+
+
+example: TODO:
+
+
+## for: break
+
+TODO: break nested loop example
+
+
+
+## for: break
+
+TODO: break nested loop example using labels to break to outer loop
+
+
+
