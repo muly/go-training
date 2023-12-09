@@ -26,13 +26,13 @@ example
 .play -numbers _concepts/01_introduction/06for/01afor.go /^func main/,/^}/
 
 
-## for: 
+## for: optional clauses
 example with optional: variable  declaration & initialization clause
 
 .play -numbers _concepts/01_introduction/06for/01bfor.go /^func main/,/^}/
 
 
-## for
+## for: optional clauses
 example with optional: counter increment clause
 
 .play -numbers _concepts/01_introduction/06for/01cfor.go /^func main/,/^}/
