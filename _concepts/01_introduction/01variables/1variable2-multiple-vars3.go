@@ -5,7 +5,11 @@ import "fmt"
 // declaring multiple variables in group
 
 // START OMIT
+
 func main() {
+	// var a int
+	// var name string
+
 	var (
 		a    int
 		name string

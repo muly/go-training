@@ -1,0 +1,205 @@
+# for
+
+////////////////////////////////////////////////////////////////////////////////////
+
+## for: standard loop
+
+3 optional clauses: 
+- counter variable declaration & initialization
+- exit condition
+- counter increment
+
+also
+- optional () around for clauses
+- mandatory {} around the body of for loop
+
+## for: standard loop
+
+syntax: 
+
+    for <variable declaration & initialization>; <exit condition>; <increment counter>{ 
+        ........................ 
+    } 
+
+example
+
+.play -numbers _concepts/01_introduction/06for/01afor.go /^func main/,/^}/
+
+
+## for: optional clauses
+example with optional: variable  declaration & initialization clause
+
+.play -numbers _concepts/01_introduction/06for/01bfor.go /^func main/,/^}/
+
+
+## for: optional clauses
+example with optional: counter increment clause
+
+.play -numbers _concepts/01_introduction/06for/01cfor.go /^func main/,/^}/
+
+
+
+## for: while loop
+
+while loop is for loop with optional 
+
+- variable declaration/initialization clause 
+- counter increment clause
+
+syntax:
+
+    <variable declaration & initialization> 
+    for ;<exit condition>;{ 
+        ................... 
+    <increment counter> 
+    } 
+
+example
+
+.play -numbers _concepts/01_introduction/06for/01dfor.go /^func main/,/^}/
+
+
+: note: the semi-colon around the exit condition are optional, see commented code.
+
+## for: infinite loop
+
+infinite loop is for loop without all 3 clauses 
+
+syntax:
+
+    for { 
+        ................... 
+    } 
+
+example
+
+.play -numbers _concepts/01_introduction/06for/02afor.go /^func main/,/^}/
+
+.play -numbers _concepts/01_introduction/06for/02bfor.go /^func main/,/^}/
+
+: there is not exit clause
+
+////////////////////////////////////////////////////////////////////////////////////
+
+## for: nested loops
+for loop within another for loop
+
+example
+
+.play -numbers _concepts/01_introduction/06for/03for.go /^func main/,/^}/
+
+////////////////////////////////////////////////////////////////////////////////////
+
+## for: range
+
+used with 
+
+- array 
+- slice 
+- string 
+- map 
+- values received on a channel 
+
+more on this later
+
+////////////////////////////////////////////////////////////////////////////////////
+## for: break
+
+A "break" statement terminates execution of the innermost 
+
+- "for", 
+- "switch", 
+- "select" 
+
+statement within the same function.
+
+
+.link https://go.dev/ref/spec#Break_statements see specs
+
+
+## for: break
+
+    for <variable declaration & initialization>; <exit condition>; <increment counter>{ 
+        ........................ 
+        if <some condition>{
+            break
+        }
+        ........................ 
+    } 
+
+
+example
+
+.play -numbers _concepts/01_introduction/06for/04afor.go /^func main/,/^}/
+
+
+## for: break
+
+example: nested loop: break inner loop
+
+.play -numbers _concepts/01_introduction/06for/04bfor.go /^func main/,/^}/
+
+Remember: "break" statement terminates execution of the innermost loop
+
+
+## for: break
+
+example: nested loop: break outer loop
+
+.play -numbers _concepts/01_introduction/06for/04cfor.go /^func main/,/^}/
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+## for: continue
+
+A "continue" statement begins the next iteration of the innermost enclosing "for" loop by advancing control to the end of the loop block.
+
+
+.link https://go.dev/ref/spec#Continue_statements see specs
+
+
+## for: continue
+
+example: 
+
+.play -numbers _concepts/01_introduction/06for/05afor.go /^func main/,/^}/
+
+## for: continue
+
+example: with nested for loops
+
+.play -numbers _concepts/01_introduction/06for/05bfor.go /^func main/,/^}/
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+## quiz
+
+## quiz
+what is the difference in the output of these 2 programs?
+
+program 1: 
+
+.play -numbers _concepts/01_introduction/06for/06q1afor.go /^func main/,/^}/
+
+program 2: 
+
+.play -numbers _concepts/01_introduction/06for/06q1bfor.go /^func main/,/^}/
+
+: program 1 (with break) breaks the for loop before printing 10
+:
+: program 2 (with continue) skips that iteration (when the condition in if block is met) and continue the next iteration of the loop. 
+:   i.e. it skips printing 10 and continue (and the same condition is met again), 
+:   and skips printing 11, like that goes on for ever.
+:   note: the program 2 never exits
+
+## quiz
+what is the difference in the output of these 2 programs?
+
+// program 1:  
+.play -numbers _concepts/01_introduction/06for/06q2afor.go /^func main/,/^}/
+
+
+// program 2: 
+.play -numbers _concepts/01_introduction/06for/06q2bfor.go /^func main/,/^}/

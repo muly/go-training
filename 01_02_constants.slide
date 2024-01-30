@@ -7,6 +7,8 @@
 - can be initialized with a literal or a expression
 - if expression is used to initialize, it must be constant expressions, evaluatable by the compiler
 
+////////////////////////////////////////////////////////////////////////////////////
+
 ## declaring constants
 **syntax:**
 
@@ -26,6 +28,15 @@
 
 .play -numbers _concepts/01_introduction/02constants/2-multiple-consts2.go /START OMIT/,/END OMIT/
 
+////////////////////////////////////////////////////////////////////////////////////
+
+## enum: enumeration
+
+## enum
+**non enum example**
+
+.play -numbers _concepts/01_introduction/02constants/3-enum0.go /START OMIT/,/END OMIT/
+
 
 ## enum
 **manual enumeration**
@@ -33,10 +44,12 @@
 .play -numbers _concepts/01_introduction/02constants/3-enum1.go /START OMIT/,/END OMIT/
 
 ## enum
-**iota enumerator**\
-starts at 0 by default
+**iota enumerator**
+- integer type
+- starts at 0 by default
 
-.play -numbers _concepts/01_introduction/02constants/3-enum2.go /START OMIT/,/END OMIT/
+.play -numbers _concepts/01_introduction/02constants/3-enum2a.go /START OMIT/,/END OMIT/
+
 
 ## enum
 **iota enumerator**\
@@ -49,6 +62,8 @@ to start at a different number
 to skip a part of the sequence 
 
 .play -numbers _concepts/01_introduction/02constants/3-enum4.go /START OMIT/,/END OMIT/
+
+////////////////////////////////////////////////////////////////////////////////////
 
 ## constants at package level
 

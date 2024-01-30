@@ -2,6 +2,58 @@
 
 ## Keywords
 
+25 keywords only
+
+    break        default      func         interface    select
+    case         defer        go           map          struct
+    chan         else         goto         package      switch
+    const        fallthrough  if           range        type
+    continue     for          import       return       var
+
+
+.link https://go.dev/ref/spec#Keywords see specs
+
 ## Code Structure
 
+- always start with package keyword 
+- 
 
+
+## data types
+
+**Go's basic types**
+
+	bool
+
+	string
+
+	int  int8  int16  int32  int64
+	uint uint8 uint16 uint32 uint64 uintptr
+
+	byte // alias for uint8
+
+	rune // alias for int32
+		 // represents a Unicode code point
+
+	float32 float64
+
+	complex64 complex128
+
+## comments
+
+    // single line comment
+
+    /* multiline
+    comments*/
+
+
+## go toolchain
+    go help
+
+some of the frequently used go sub commands
+
+    go run
+    go build
+    go fmt
+    go test
+    go mod
