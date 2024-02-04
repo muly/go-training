@@ -21,25 +21,8 @@ func main() {
 	// ## accessing Individual Element of the map
 	// 05accessingIndividualElement/
 
-	// reading individual value given the key:
-	// syntax: map_var[key]
-	// 1a_reading.go
-	// {
-	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
-	// 	fmt.Println(m[1]) // hardcoding key
 
-	// // saving the value retrieved into a variable
-	// 1b_reading.go
-	// val := m[k]
-	// fmt.Println(val)
 
-	// // using a variable as a key
-	// // 1c_reading.go
-	// k := 2
-	// val := m[k] // same as m[2]
-	// fmt.Println(val)
-	//
-	// }
 
 	// accessing individual element: with existing key with empty value
 	// 2reading_existingKeyWithEmptyValue.go

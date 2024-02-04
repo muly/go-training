@@ -123,6 +123,30 @@ examples:
 ////////////////////////////////////////////////////////////////////////////////////
 ## retrieving a key value pairs
 
+**reading individual value given the key**
+
+syntax: 
+
+	map_var[key]
+
+**reading individual value given the key**
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/1a_reading_with_hardcoding_key.go /START OMIT/,/END OMIT/
+
+
+
+**reading value into a variable**
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/1b_reading_into_var.go /START OMIT/,/END OMIT/
+
+
+**using a variable as a key**
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/1c_reading_with_variable_key.go /START OMIT/,/END OMIT/
+
+
+##
+
 TODO: see maps.go
 
 
