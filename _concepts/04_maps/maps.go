@@ -7,156 +7,39 @@ func main() {
 	// ## declaring a map
 	// 01declaring/
 
-	// 1declareOnly.go
-	// package main
-	// func main(){ 
-	// 	
-	// 	var m map[int]string
-	//
-	// 	fmt.Println(m)
-	// }
-
-	// 2declareButUninitialized.go
-	// { 
-	// 	
-	// 	var m map[int]string // not initialized
-	//
-	// 	if m == nil {
-	// 		fmt.Println("map in nil")
-	// 	}
-	// }
-
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// ## 2 initializing a map
+	// ## initializing a map
 	// 02initializing/
-
-	// // 1 declare and initialize in separate lines
-	// // 1declareAndInitialize_inSeparateLines_Example1.go
-	// {
-	// 	var m map[int]string
-	// 	m = map[int]string{1: "one", 3: "three", 0: "zero"}
-	//
-	// 	fmt.Println(m)
-	// }
-
-	// // another example: map of phone number to person name
-	// 1declareAndInitialize_inSeparateLines_Example2.go
-	// {
-	// 	var m map[string]string
-	// 	m = map[string]string{
-	// 		"123-456-7890": "John",
-	// 		"123-456-9999": "Max",
-	// 	}
-	//
-	// 	fmt.Println(m)
-	// }
-
-
-	// initializing: declare and initialize in same line
-	// 2declareAndInitialize_inSameLine.go
-	// {
-	// 	var m map[int]string = map[int]string{1: "one", 3: "three", 0: "zero"}
-	//
-	// 	fmt.Println(m)
-	// }
-
-	// initializing: declare and initialize in same line, inferring datatype
-	// 3declareAndInitialize_inSameLineInferringDatatype.go
-	// {
-	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
-	//
-	// 	fmt.Println(m)
-	// }
-
-	
-	// initializing: short hand form
-	// 4declareAndInitialize_inSameLineShortHandForm.go
-	// {
-	// 	m := map[int]string{1: "one", 3: "three", 0: "zero"}
-	//
-	// 	fmt.Println(m)
-	// }
-
-
-	// initializing: by individual values on a nil map
-	// A nil map behaves like an empty map when reading, but attempts to write to a nil map will cause a runtime panic;
-	// 5declareAndInitialize_byIndividualValuesOnANilMap.go
-	// {
-	// 	var m map[int]string // nil map, i.e. not initialized
-	//
-	// 	m[1] = "one" // ERROR: panic: assignment to entry in nil map
-	//
-	// 	fmt.Println(m)
-	// }
-
-
-	// initializing: individual values, after initializing
-	// 6declareAndInitialize_individualValues_afterInitializing.go
-	// {
-	// 	var m map[int]string = map[int]string{9: "nine"}
-	//
-	// 	m[1] = "one"
-	//
-	// 	fmt.Println(m)
-	// }
-
-
-	// initializing: individual values, after empty initializing
-	// 7declareAndInitialize_individualValues_afterEmptyInitializing.go
-	// {
-	// 	var m map[int]string = map[int]string{}
-	//
-	// 	m[1] = "one"
-	//
-	// 	fmt.Println(m)
-	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ## assigning
-	// 03assigning/
+	// 04assigning/
 
-	// assigning one map to another map
-	// 1fromAnotherMap.go
-	// {
-	// 	var m map[int]string
-	//
-	// 	n := map[int]string{1: "one", 3: "three", 0: "zero"}
-	//
-	// 	m = n
-	//
-	// 	fmt.Println(m)
-	// TODO: print the address of both maps
-	// }
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// ## reinitializing
-	// 04reinitializing/
-
-	// reinitializing the map
-	// 1withAnotherMap.go
-	// {
-	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
-	//
-	// 	m = map[int]string{10: "ten", 20: "twenty", 30: "thirty"}
-	// 	fmt.Println(m)
-	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ## accessing Individual Element of the map
 	// 05accessingIndividualElement/
 
-
-	// reading individual element:
+	// reading individual value given the key:
 	// syntax: map_var[key]
-	// 1reading.go
+	// 1a_reading.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	// 	fmt.Println(m[1]) // hardcoding key
-	//
-	// 	k := 0
-	// 	fmt.Println(m[k]) // using a variable as a key
-	// }
 
+	// // saving the value retrieved into a variable
+	// 1b_reading.go
+	// val := m[k]
+	// fmt.Println(val)
+
+	// // using a variable as a key
+	// // 1c_reading.go
+	// k := 2
+	// val := m[k] // same as m[2]
+	// fmt.Println(val)
+	//
+	// }
 
 	// accessing individual element: with existing key with empty value
 	// 2reading_existingKeyWithEmptyValue.go
@@ -167,7 +50,6 @@ func main() {
 	// 	fmt.Println(m)
 	// }
 
-
 	// accessing individual element: with non existing key
 	// 3reading_withNonExistingKey.go
 	// {
@@ -176,9 +58,6 @@ func main() {
 	// 	fmt.Println(m[9]) // no error. returns zero value for the value type, i.e. 0 for float32
 	// 	fmt.Println(m)
 	// }
-
-
-
 
 	// writing individual element
 	// syntax: map_var[key]=new_value
@@ -193,7 +72,6 @@ func main() {
 	// 	fmt.Println(m[0])
 	//
 	// }
-
 
 	// overwriting individual element
 	// key_value has to be unique
@@ -232,6 +110,28 @@ func main() {
 	// }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// ## un-initialized map / nil map
+
+	// 2declareButUninitialized.go // TODO: should I keep this program here under "declaring" section or remove it as we are covering this under "undeclared map" section. mostly lets ignore this program.
+	// {
+	// 	var m map[int]string // not initialized
+	// 	if m == nil {
+	// 		fmt.Println("map in nil")
+	// 	}
+	// }
+
+	// initializing: by individual values on a nil map
+	// A nil map behaves like an empty map when reading, but attempts to write to a nil map will cause a runtime panic;
+	// 5declareAndInitialize_byIndividualValuesOnANilMap.go
+	// {
+	// 	var m map[int]string // nil map, i.e. not initialized
+	//
+	// 	m[1] = "one" // ERROR: panic: assignment to entry in nil map
+	//
+	// 	fmt.Println(m)
+	// }
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ## 6 len() system functions
 	// 06len/
 	// len() system functions
@@ -244,9 +144,9 @@ func main() {
 	// ## 7 for Loop
 	// 07loop/
 	// syntax: key_var, val_var:= range map_var{}
-	// 
-	// range returns key and value; 
-	
+	//
+	// range returns key and value;
+
 	// 1withKeyValue.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
@@ -255,7 +155,6 @@ func main() {
 	// 		fmt.Printf("key %v, value %v\n", k, v)
 	// 	}
 	// }
-
 
 	// key and value are optional: value only
 	// 2withValueOnly.go
@@ -327,7 +226,6 @@ func main() {
 	// // delete one kv pair
 	// // syntax: delete(map_variable, key)
 
-
 	// 1singlePair.go
 	// {
 	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
@@ -341,7 +239,6 @@ func main() {
 	// 	fmt.Println("after delete, key exists: ", ok)
 	// 	fmt.Println(m)
 	// }
-
 
 	// // delete all
 	// 2allPairs.go
@@ -358,8 +255,7 @@ func main() {
 	// 10withComplexTypes/
 	// // value may be of any type, including other maps.
 	// // key may be of any type that are comparable (see https://go.dev/ref/spec#Comparison_operators).
-	
-	
+
 	// // map of struct
 	// 1mapOfStruct.go
 	// {
