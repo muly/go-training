@@ -15,87 +15,22 @@ func main() {
 	// ## assigning
 	// 04assigning/
 
-
-
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ## accessing Individual Element of the map
-	// 05accessingIndividualElement/
 
-
-
-
-	// accessing individual element: with existing key with empty value
-	// 2reading_existingKeyWithEmptyValue.go
-	// {
-	// 	var m = map[int]float32{1: 111, 3: 333, 9: 0}
-	//
-	// 	fmt.Println(m[9])
-	// 	fmt.Println(m)
-	// }
-
-	// accessing individual element: with non existing key
-	// 3reading_withNonExistingKey.go
-	// {
-	// 	var m = map[int]float32{1: 111, 3: 333}
-	//
-	// 	fmt.Println(m[9]) // no error. returns zero value for the value type, i.e. 0 for float32
-	// 	fmt.Println(m)
-	// }
-
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// writing individual element
-	// syntax: map_var[key]=new_value
-	// 4writing.go
-	// {
-	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
 	//
-	// 	m[0] = "A"
-	// 	fmt.Println(m[0])
-	//
-	// 	m[0] = "B"
-	// 	fmt.Println(m[0])
-	//
-	// }
 
-	// overwriting individual element
-	// key_value has to be unique
-	// syntax: map_var[key]=new_value
-	// 5writing_overwriting.go
-	// {
-	// 	var m = map[int]string{1: "one", 3: "three", 0: "zero"}
-	//
-	// 	m[3] = "A" // key has to be unique, if not overwrite
-	// 	fmt.Println(m[3])
-	//
-	// 	m[1] = "A" // value need not be unique. here key 3, 1 both has the same value "A"
-	// 	fmt.Println(m)
-	// }
 
-	// find if the key already exists in the map
-	// as we noticed in the previous example, both of the cases (mentioned below) return same value, (ie 0). so how to differenciate between these two cases
-	// - case 1: key exists but with zero value
-	// - case 2: key doesn't exist in the map
-	//
-	// map returns a optional second value, of type bool, which indicates if the given key exists or not
-	// syntax:
-	//  value, exists := map_variable[key]
-	// 		if exists is true, given key is in the map_variable
-	//  	if exists is false, given key is not in the map_variable
 
-	// 6keyExistsCheck.go
-	// {
-	// 	var m = map[int]float32{1: 10.5, 3: 30.5, 5: 0.0}
-	//
-	// 	v, ok := m[99]
-	// 	fmt.Printf("value: %v, key exists: %v\n", v, ok)
-	//
-	// 	v, ok = m[5]
-	// 	fmt.Printf("value: %v, key exists: %v\n", v, ok)
-	// }
+
+
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ## un-initialized map / nil map
 
-	// 2declareButUninitialized.go // TODO: should I keep this program here under "declaring" section or remove it as we are covering this under "undeclared map" section. mostly lets ignore this program.
+	// 2declareButUninitialized.go 
 	// {
 	// 	var m map[int]string // not initialized
 	// 	if m == nil {

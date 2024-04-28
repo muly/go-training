@@ -12,7 +12,6 @@ Go provides a built-in **map** type that implements a **hash table**
 
 ////////////////////////////////////////////////////////////////////////////////////
 ## declaring a map
-
 ## declaring a map
 **syntax:** 
 
@@ -33,7 +32,6 @@ Go provides a built-in **map** type that implements a **hash table**
 
 ////////////////////////////////////////////////////////////////////////////////////	
 ## initializing a map
-
 ## initializing a map
 **initialize multiple key value pairs**
 
@@ -84,6 +82,8 @@ _empty initialization:_
 
 _initializing individual key value pairs, after empty initializing:_
 
+syntax:  `map_var[key]=new_value`
+
 .play -numbers _concepts/04_maps/02initializing/5b_initializing_individual_key_value_pairs.go /START OMIT/,/END OMIT/
 
 
@@ -109,18 +109,27 @@ examples:
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-## assigning 
 
-**assigning with another map literal**
+## writing individual element
+## writing individual element
 
-.play -numbers _concepts/04_maps/04assigning/1withAnotherMap.go /START OMIT/,/END OMIT/
+like we have seen earlier...
+
+ 
+.play -numbers _concepts/04_maps/05accessingIndividualElement/4writing.go /START OMIT/,/END OMIT/
 
 
-**assigning with another map variable**
+## writing individual element
+**overwriting individual element**
 
-.play -numbers _concepts/04_maps/04assigning/2withAnotherMapVariable.go /START OMIT/,/END OMIT/
+- key is unique
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/5writing_overwriting.go /START OMIT/,/END OMIT/
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////
+## retrieving a key value pairs
 ## retrieving a key value pairs
 
 **reading individual value given the key**
@@ -145,14 +154,62 @@ syntax:
 .play -numbers _concepts/04_maps/05accessingIndividualElement/1c_reading_with_variable_key.go /START OMIT/,/END OMIT/
 
 
-##
+## retrieving a key value pairs
+**with existing key with empty value**
 
-TODO: see maps.go
-
-
-
+.play -numbers _concepts/04_maps/05accessingIndividualElement/2reading_existingKeyWithEmptyValue.go /START OMIT/,/END OMIT/
 
 
+## retrieving a key value pairs
+**with non existing key**
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/3reading_withNonExistingKey.go /START OMIT/,/END OMIT/
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+## exists check
+## exists check
+
+**find if the key already exists in the map**
+as we noticed in the previous example, both of the cases (mentioned below) return same value, (ie 0). so how to differenciate between these two cases
+- case 1: key exists but with zero value
+- case 2: key doesn't exist in the map
+
+map returns a optional second value, of type bool, which indicates if the given key exists or not
+syntax:
+	value, exists := map_variable[key]
+		if exists is true, given key is in the map_variable
+	if exists is false, given key is not in the map_variable
+
+
+
+## exists check
+.play -numbers _concepts/04_maps/05accessingIndividualElement/6keyExistsCheck.go /START OMIT/,/END OMIT/
+
+
+////////////////////////////////////////////////////////////////////////////////////
+## assigning 
+## assigning 
+
+**assigning with another map literal**
+
+.play -numbers _concepts/04_maps/04assigning/1withAnotherMap.go /START OMIT/,/END OMIT/
+
+
+**assigning with another map variable**
+
+.play -numbers _concepts/04_maps/04assigning/2withAnotherMapVariable.go /START OMIT/,/END OMIT/
+
+## TODO
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ## un-initialized map
 **default value**
