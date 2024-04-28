@@ -4,78 +4,212 @@
 ////////////////////////////////////////////////////////////////////////////////////
 ## what is map?
 
+Go provides a built-in **map** type that implements a **hash table**
 
-https://go.dev/blog/maps
+**Hash table** is a data structure that stores data in **key-value pairs**.
+
+[Learn more in go blog](https://go.dev/blog/maps)
 
 ////////////////////////////////////////////////////////////////////////////////////
 ## declaring a map
-// slide 1
+## declaring a map
 **syntax:** 
 
 			map[KeyType]ValueType
  
-- KeyType: any type that is comparable (not slice, map, function)
+- KeyType: any type that is comparable (i.e. not slice, map, function)
 - ValueType: any type at all, including another map!
 
 - key is unique
 
-
-
-// slide 2
 ## declaring a map
-**map of integer to string**
+**example: map of integer to string**
 
-	var m map[int]string
+
+.play -numbers _concepts/04_maps/01declaring/1declareOnly.go /^func main/,/^}/
 
 
 
 ////////////////////////////////////////////////////////////////////////////////////	
-## initialize map
+## initializing a map
+## initializing a map
 **initialize multiple key value pairs**
 
-    var m map[int]string
-    m= map[int]string{
-        1:"one",
-        2:"two",
-    }
+example 1:
 
-## initialize map
+.play -numbers _concepts/04_maps/02initializing/1declareAndInitialize_inSeparateLines_Example1.go /^func main/,/^}/
+
+: declaration and initialization is made in separate lines
+
+## initializing a map
+**initialize multiple key value pairs**
+
+another example: map of phone number to person name:
+
+.play -numbers _concepts/04_maps/02initializing/1declareAndInitialize_inSeparateLines_Example2.go /^func main/,/^}/
+
+: along with that, in this example, we have broken down each key value pairs into separate lines, for easy readability
+
+
+## initializing a map
+**initialize multiple key value pairs**
+
+
+_declare and initialize in same line:_
+
+.play _concepts/04_maps/02initializing/2declareAndInitialize_inSameLine.go /START OMIT/,/END OMIT/
+
+
+_declare and initialize in same line, inferring datatype:_
+
+.play _concepts/04_maps/02initializing/3declareAndInitialize_inSameLineInferringDatatype.go /START OMIT/,/END OMIT/
+
+
+_short hand form:_
+
+.play _concepts/04_maps/02initializing/4declareAndInitialize_inSameLineShortHandForm.go /START OMIT/,/END OMIT/
+
+
+: like in the case of declaration and initialization of any variable, we can do in different variations
+
+## initializing a map
 **initialize individual key value pairs**
 
-    var m map[int]string 
-    m= map[int]string{}  // empty initialization 
-    m[1]="one"
-    m[2]="two"
+_empty initialization:_
 
-    m[3]="three" // re-initialize
-    m[1]="ONE" // update existing key with new value
+.play -numbers _concepts/04_maps/02initializing/5a_empty_initialization.go /START OMIT/,/END OMIT/
 
-## initialize map
+
+_initializing individual key value pairs, after empty initializing:_
+
+syntax:  `map_var[key]=new_value`
+
+.play -numbers _concepts/04_maps/02initializing/5b_initializing_individual_key_value_pairs.go /START OMIT/,/END OMIT/
+
+
+_reinitialize and "later-initialize" a key:_
+
+.play -numbers _concepts/04_maps/02initializing/5c_reinitialize_key.go /START OMIT/,/END OMIT/
+
+
+## initializing a map
 **using make**
-// TODO: need to add code and make syntax. Question: is make used to declare a map or initialize a map?
+
+syntax:
+
+	= make(map[KeyType]ValueType)
+
+examples: 
 
 	var mapVar map[KeyType]ValueType = make(map[KeyType]ValueType)
-
+:
 	var mapVar = make(map[KeyType]ValueType)
-
+:
 	mapVar := make(map[KeyType]ValueType)
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+## writing individual element
+## writing individual element
+
+like we have seen earlier...
+
+ 
+.play -numbers _concepts/04_maps/05accessingIndividualElement/4writing.go /START OMIT/,/END OMIT/
+
+
+## writing individual element
+**overwriting individual element**
+
+- key is unique
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/5writing_overwriting.go /START OMIT/,/END OMIT/
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 ## retrieving a key value pairs
-get the value for a given key
+## retrieving a key value pairs
 
-	var m map[int]string
-	m = map[int]string{
-		1: "one",
-		2: "two",
-	}
+**reading individual value given the key**
 
-	fmt.Println(m[1])
+syntax: 
 
-	// key as a variable
-	k := 2
-	fmt.Println(m[k])
+	map_var[key]
 
+**reading individual value given the key**
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/1a_reading_with_hardcoding_key.go /START OMIT/,/END OMIT/
+
+
+
+**reading value into a variable**
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/1b_reading_into_var.go /START OMIT/,/END OMIT/
+
+
+**using a variable as a key**
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/1c_reading_with_variable_key.go /START OMIT/,/END OMIT/
+
+
+## retrieving a key value pairs
+**with existing key with empty value**
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/2reading_existingKeyWithEmptyValue.go /START OMIT/,/END OMIT/
+
+
+## retrieving a key value pairs
+**with non existing key**
+
+.play -numbers _concepts/04_maps/05accessingIndividualElement/3reading_withNonExistingKey.go /START OMIT/,/END OMIT/
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+## exists check
+## exists check
+
+**find if the key already exists in the map**
+as we noticed in the previous example, both of the cases (mentioned below) return same value, (ie 0). so how to differenciate between these two cases
+- case 1: key exists but with zero value
+- case 2: key doesn't exist in the map
+
+map returns a optional second value, of type bool, which indicates if the given key exists or not
+syntax:
+	value, exists := map_variable[key]
+		if exists is true, given key is in the map_variable
+	if exists is false, given key is not in the map_variable
+
+
+
+## exists check
+.play -numbers _concepts/04_maps/05accessingIndividualElement/6keyExistsCheck.go /START OMIT/,/END OMIT/
+
+
+////////////////////////////////////////////////////////////////////////////////////
+## assigning 
+## assigning 
+
+**assigning with another map literal**
+
+.play -numbers _concepts/04_maps/04assigning/1withAnotherMap.go /START OMIT/,/END OMIT/
+
+
+**assigning with another map variable**
+
+.play -numbers _concepts/04_maps/04assigning/2withAnotherMapVariable.go /START OMIT/,/END OMIT/
+
+## TODO
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 ## un-initialized map
 **default value**
@@ -99,14 +233,16 @@ example:
 
 ## un-initialized map
 **writing into un-initialized map**
-	var m map[int]string
+
+	var m map[int]string // this is un-initialized map
 
 	m[1] = "ONE"
 
 	fmt.Println(m) // what is the output?
 
 
-// new slide
+// move to new slide
+
 	var m map[int]string
 	// m= map[int]string{}
 
@@ -114,7 +250,7 @@ example:
 
 	fmt.Println(m)
 
-// new slice 
+// new slide 
 : because the map is reference type and default value of un-initialized map is nil, writing to un-initialized map will result in panic 
 
 	var m map[int]string
