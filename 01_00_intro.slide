@@ -16,7 +16,10 @@
 ## Code Structure
 
 - always start with package keyword 
-- 
+- order of execution: 
+    - package level variables
+    - `init()` function
+    - `main()` function
 
 
 ## data types
